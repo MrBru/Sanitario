@@ -1,0 +1,63 @@
+{
+	"patologie": [{
+			"codice patologia": "001",
+			"nome": "febbre",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologia": "002",
+			"nome": "cacaiola",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologia": "003",
+			"nome": "emorroidi",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologia": "004",
+			"nome": "vomito",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "005",
+			"nome": "sbronza",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "006",
+			"nome": "non lo so",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "007",
+			"nome": "vampirismo",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "008",
+			"nome": "diabete",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "009",
+			"nome": "fai schifo",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "010",
+			"nome": "deceduto",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "011",
+			"nome": "narcisista",
+			"descrizione": "blablabla"
+		},
+		{
+			"codice patologie": "012",
+			"nome": "cazzomene",
+			"descrizione": "blablabla"
+		}
+	]
+}

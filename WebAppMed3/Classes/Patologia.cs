@@ -22,6 +22,13 @@ namespace ApplicazioneMedico.Data
             this.descrizione = descrizione;
         }
 
+        public Patologia(string codicePatologia)
+        {
+            this.codicePatologia = codicePatologia;
+            this.nome = null;
+            this.descrizione = null;
+        }
+
         public string CodicePatologia
         {
             get

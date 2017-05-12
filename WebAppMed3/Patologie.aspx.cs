@@ -13,7 +13,12 @@ namespace WebAppMed3
         protected void Page_Load(object sender, EventArgs e)
         {
             //leggere file json
-            //jsonPatologie = System.IO.File.ReadAllText(@"C:\Users\admin\Documents\Esercitazioni\WebAppMed3\WebAppMed3\test\patologie.json");
+            //jsonPatologie = System.IO.File.ReadAllText(@"C:\Users\admin\Documents\Esercitazioni\WebAppMed3\WebAppMed3\patologie.json");
+        }
+
+        protected void Insert(object sender, EventArgs e)
+        {
+            SqlDataSource1.Insert();
         }
     }
 }

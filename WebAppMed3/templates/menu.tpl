@@ -21,7 +21,7 @@
                                         <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="Medici.aspx">Lista</a></li>
+                                        <li><a href="Medici.aspx">Tabella Medici</a></li>
                                         <li><a href="InserisciMedico.aspx">Inserisci nuovo</a></li>
                                     </ul>
                                 </li>
@@ -31,7 +31,7 @@
                                         <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="Pazienti.aspx">Lista</a></li>
+                                        <li><a href="Pazienti.aspx">Tabella Pazienti</a></li>
                                         <li><a href="InserisciPaziente.aspx">Inserisci nuovo</a></li>
                                     </ul>
                                 </li>

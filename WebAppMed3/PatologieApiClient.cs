@@ -15,14 +15,14 @@ namespace ProvaJson
 
         public static void getApi()
         {
-            var url = "patologie.json"; //manca la url delle api
+            var url = "http://192.168.4.159:8080/ApiServer/Paziente/all"; //manca la url delle api
               var syncClient = new WebClient();
             var content = syncClient.DownloadString(url);
 
-             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PatologieData));
+             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PazientiData));
             using (var ms = new MemoryStream(Encoding.Unicode.GetBytes(content)))
              {
-            var weatherData = (PatologieData)serializer.ReadObject(ms);
+            var pazientiData = (PazientiData)serializer.ReadObject(ms);
             }
 
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Pazienti.aspx.cs" Inherits="WebAppMed3.Pazienti" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Medici.aspx.cs" Inherits="WebAppMed3.Medici" %>
 
 <!DOCTYPE html>
 
@@ -29,24 +29,24 @@
     <!--#include file="templates/menu.tpl"-->
     
     <section class="container content-container">
-        <h3>Tabella Pazienti</h3>
+        <h3>Tabella Medici</h3>
         <div class="table-wrapper col-md-12">
-            <table id="Pazienti" class="table">
+            <table id="Medici" class="table">
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Cognome</th>
-                        <th>Data di Nascita</th>
-                        <th>Luogo di Nascita</th>
-                        <th>Codice Fiscale</th>
+                        <th>Data di nascita</th>
+                        <th>Luogo di nascita</th>
+                        <th>Codice fiscale</th>
                         <th>Residenza</th>
                         <th>Provincia</th>
                         <th>Indirizzo</th>
                         <th>Telefono</th>
                         <th>Mobile</th>
                         <th>Email</th>
-                        <th>Codice Sanitario</th>
-                        <th>Codice Medico</th>
+                        <th>Codice albo</th>
+                        <th>Codice medico</th>
 
                     </tr>
                 </thead>
@@ -54,17 +54,17 @@
                     <tr>
                         <th>Nome</th>
                         <th>Cognome</th>
-                        <th>Data di Nascita</th>
-                        <th>Luogo di Nascita</th>
-                        <th>Codice Fiscale</th>
+                        <th>Data di nascita</th>
+                        <th>Luogo di nascita</th>
+                        <th>Codice fiscale</th>
                         <th>Residenza</th>
                         <th>Provincia</th>
                         <th>Indirizzo</th>
                         <th>Telefono</th>
                         <th>Mobile</th>
                         <th>Email</th>
-                        <th>Codice Sanitario</th>
-                        <th>Codice Medico</th>
+                        <th>Codice albo</th>
+                        <th>Codice medico</th>
                     </tr>
                 </tfoot>
             </table>
@@ -76,8 +76,8 @@
    <script type="text/javascript">
        //var dataset = PatologieApiClienti.getApi();
        $(document).ready(function () {
-           $("table#Pazienti").DataTable({
-               //"ajax":"test/patologie.json"
+           $("table#Medici").DataTable({
+               //"ajax":"patologie.json"
                //data:dataset
            });
        });

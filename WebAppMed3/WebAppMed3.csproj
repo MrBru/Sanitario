@@ -84,17 +84,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Interface\Certificati.aspx" />
+    <Content Include="Certificati.aspx" />
     <Content Include="Global.asax" />
     <Content Include="css\custom.css" />
     <Content Include="css\theme.css" />
-    <Content Include="Interface\InserisciMedico.aspx" />
+    <Content Include="InserisciMedico.aspx" />
+    <Content Include="InserisciPaziente.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="patologie.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -118,43 +120,54 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery.easing.min.js" />
     <Content Include="js\jquery.min.js" />
-    <Content Include="Interface\Medici.aspx" />
+    <Content Include="Medici.aspx" />
     <None Include="templates\header.tpl" />
     <None Include="templates\footer.tpl" />
-    <Content Include="Interface\Patologie.aspx" />
+    <Content Include="Patologie.aspx" />
     <None Include="templates\menu.tpl">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Interface\Pazienti.aspx" />
+    <Content Include="Patologie2.aspx" />
+    <Content Include="Pazienti.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Interface\index.aspx" />
+    <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\Certificati.aspx.cs">
+    <Compile Include="Certificati.aspx.cs">
       <DependentUpon>Certificati.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\Certificati.aspx.designer.cs">
+    <Compile Include="Certificati.aspx.designer.cs">
       <DependentUpon>Certificati.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Certificato.cs" />
-    <Compile Include="WebAPI\CertificatoAPI.cs" />
-    <Compile Include="WebAPI\HttpApiRestClient.cs" />
+    <Compile Include="HttpApiRestClient.cs" />
+    <Compile Include="InserisciPaziente.aspx.cs">
+      <DependentUpon>InserisciPaziente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserisciPaziente.aspx.designer.cs">
+      <DependentUpon>InserisciPaziente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Medico.cs" />
-    <Compile Include="WebAPI\MedicoAPI.cs" />
     <Compile Include="Classes\Patologia.cs" />
-    <Compile Include="WebAPI\PatologiaAPI.cs" />
+    <Compile Include="Patologie2.aspx.cs">
+      <DependentUpon>Patologie2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patologie2.aspx.designer.cs">
+      <DependentUpon>Patologie2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PatologieApiClient.cs" />
     <Compile Include="PatologieData.cs" />
     <Compile Include="Classes\Paziente.cs" />
-    <Compile Include="WebAPI\PazienteAPI.cs" />
-    <Compile Include="Interface\Pazienti.aspx.cs">
+    <Compile Include="Pazienti.aspx.cs">
       <DependentUpon>Pazienti.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\Pazienti.aspx.designer.cs">
+    <Compile Include="Pazienti.aspx.designer.cs">
       <DependentUpon>Pazienti.aspx</DependentUpon>
     </Compile>
     <Compile Include="PazientiController.cs" />
@@ -162,33 +175,34 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Interface\InserisciMedico.aspx.cs">
+    <Compile Include="InserisciMedico.aspx.cs">
       <DependentUpon>InserisciMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\InserisciMedico.aspx.designer.cs">
+    <Compile Include="InserisciMedico.aspx.designer.cs">
       <DependentUpon>InserisciMedico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interface\Medici.aspx.cs">
+    <Compile Include="Medici.aspx.cs">
       <DependentUpon>Medici.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\Medici.aspx.designer.cs">
+    <Compile Include="Medici.aspx.designer.cs">
       <DependentUpon>Medici.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Interface\Patologie.aspx.cs">
+    <Compile Include="Patologie.aspx.cs">
       <DependentUpon>Patologie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\Patologie.aspx.designer.cs">
+    <Compile Include="Patologie.aspx.designer.cs">
       <DependentUpon>Patologie.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PazientiData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Interface\index.aspx.cs">
+    <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Interface\index.aspx.designer.cs">
+    <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="templates\header.aspx.cs">
@@ -199,6 +213,7 @@
       <DependentUpon>header.tpl</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

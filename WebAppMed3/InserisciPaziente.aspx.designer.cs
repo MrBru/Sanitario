@@ -10,6 +10,6 @@
 namespace WebAppMed3 {
     
     
-    public partial class Patologie {
+    public partial class InserisciPaziente {
     }
 }

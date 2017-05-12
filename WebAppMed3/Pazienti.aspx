@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Certificati.aspx.cs" Inherits="WebAppMed3.Certificati" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Pazienti.aspx.cs" Inherits="WebAppMed3.Pazienti" %>
 
 <!DOCTYPE html>
 
@@ -29,54 +29,55 @@
     <!--#include file="templates/menu.tpl"-->
     
     <section class="container content-container">
-        <h3>Tabella Certificati</h3>
+        <h3>Tabella Pazienti</h3>
         <div class="table-wrapper col-md-12">
-            <table id="Certificati" class="table">
+            <table id="Pazienti" class="table">
                 <thead>
                     <tr>
-                        <th>Codice paziente</th>
-                        <th>Codice medico</th>
-                        <th>Data Emissione</th>
-                        <th>Codice Patologia</th>
-                        <th>Data Inizio</th>
-                        <th>Data Fine</th>
-                        <th>Note</th>
-                        <th>Tipologia</th>
-                        <th>Domicilio</th>
-                        <th>Indirizzo</th>
-                        <th>Comune</th>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Data di Nascita</th>
+                        <th>Luogo di Nascita</th>
+                        <th>Codice Fiscale</th>
+                        <th>Residenza</th>
                         <th>Provincia</th>
-                        <th>CAP</th>
+                        <th>Indirizzo</th>
+                        <th>Telefono</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Codice Sanitario</th>
+                        <th>Codice Medico</th>
 
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Codice paziente</th>
-                        <th>Codice medico</th>
-                        <th>Data Emissione</th>
-                        <th>Codice Patologia</th>
-                        <th>Data Inizio</th>
-                        <th>Data Fine</th>
-                        <th>Note</th>
-                        <th>Tipologia</th>
-                        <th>Domicilio</th>
-                        <th>Indirizzo</th>
-                        <th>Comune</th>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Data di Nascita</th>
+                        <th>Luogo di Nascita</th>
+                        <th>Codice Fiscale</th>
+                        <th>Residenza</th>
                         <th>Provincia</th>
-                        <th>CAP</th>
+                        <th>Indirizzo</th>
+                        <th>Telefono</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Codice Sanitario</th>
+                        <th>Codice Medico</th>
                     </tr>
                 </tfoot>
             </table>
         </div>
     </section>
 
+
     <!--#include file="templates/footer.tpl"-->
 
    <script type="text/javascript">
        //var dataset = PatologieApiClienti.getApi();
        $(document).ready(function () {
-           $("table#Certificati").DataTable({
+           $("table#Pazienti").DataTable({
                //"ajax":"test/patologie.json"
                //data:dataset
            });

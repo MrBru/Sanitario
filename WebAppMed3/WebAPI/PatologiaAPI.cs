@@ -20,7 +20,7 @@ namespace WebAppMed3.WebAppAPI
 
             try
             {
-                sql = "SELECT [id],[nome],[cognome],[città],[paese] FROM [Patologie]"; //query
+                sql = "SELECT * FROM Patologia"; //query
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 dr = cmd.ExecuteReader(); //esegui query e inserisce i dati in dr
                 while (dr.Read()) //mi rende un booleano, quando ha finito di leggere restituisce false
@@ -37,7 +37,7 @@ namespace WebAppMed3.WebAppAPI
             catch (Exception ex)//eccezione la mando nello strato alto
             {
                 //messaggio di errore
-                throw new Exception("Errore durante la lettura dei patologie", ex);
+                throw new Exception("Errore durante la lettura delle patologie", ex);
             }
         }
 

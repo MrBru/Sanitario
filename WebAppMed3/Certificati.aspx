@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Patologie.aspx.cs" Inherits="WebAppMed3.Patologie" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Certificati.aspx.cs" Inherits="WebAppMed3.Certificati" %>
 
 <!DOCTYPE html>
 
@@ -29,26 +29,48 @@
     <!--#include file="templates/menu.tpl"-->
     
     <section class="container content-container">
-        <h3>Tabella patologie</h3>
+
+
+ <%--       <h3>Tabella Certificati</h3>
         <div class="table-wrapper col-md-12">
-            <table id="Patologie" class="table">
+            <table id="Certificati" class="table">
                 <thead>
                     <tr>
+                        <th>Codice paziente</th>
+                        <th>Codice medico</th>
+                        <th>Data Emissione</th>
                         <th>Codice Patologia</th>
-                        <th>Nome</th>
-                        <th>Descrizione</th>
+                        <th>Data Inizio</th>
+                        <th>Data Fine</th>
+                        <th>Note</th>
+                        <th>Tipologia</th>
+                        <th>Domicilio</th>
+                        <th>Indirizzo</th>
+                        <th>Comune</th>
+                        <th>Provincia</th>
+                        <th>CAP</th>
 
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
+                        <th>Codice paziente</th>
+                        <th>Codice medico</th>
+                        <th>Data Emissione</th>
                         <th>Codice Patologia</th>
-                        <th>Nome</th>
-                        <th>Descrizione</th>
+                        <th>Data Inizio</th>
+                        <th>Data Fine</th>
+                        <th>Note</th>
+                        <th>Tipologia</th>
+                        <th>Domicilio</th>
+                        <th>Indirizzo</th>
+                        <th>Comune</th>
+                        <th>Provincia</th>
+                        <th>CAP</th>
                     </tr>
                 </tfoot>
             </table>
-        </div>
+        </div>--%>
     </section>
 
     <!--#include file="templates/footer.tpl"-->
@@ -56,7 +78,7 @@
    <script type="text/javascript">
        //var dataset = PatologieApiClienti.getApi();
        $(document).ready(function () {
-           $("table#Patologie").DataTable({
+           $("table#Certificati").DataTable({
                //"ajax":"test/patologie.json"
                //data:dataset
            });

@@ -127,7 +127,6 @@
     <None Include="templates\menu.tpl">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Patologie2.aspx" />
     <Content Include="Pazienti.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -153,13 +152,6 @@
     </Compile>
     <Compile Include="Classes\Medico.cs" />
     <Compile Include="Classes\Patologia.cs" />
-    <Compile Include="Patologie2.aspx.cs">
-      <DependentUpon>Patologie2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Patologie2.aspx.designer.cs">
-      <DependentUpon>Patologie2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PatologieApiClient.cs" />
     <Compile Include="PatologieData.cs" />
     <Compile Include="Classes\Paziente.cs" />

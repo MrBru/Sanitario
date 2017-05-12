@@ -26,48 +26,40 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <form id="form1" runat="server">
     <!--#include file="templates/menu.tpl"-->
     
     <section class="container content-container">
         <h3>Tabella Pazienti</h3>
         <div class="table-wrapper col-md-12">
-            <table id="Pazienti" class="table">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Cognome</th>
-                        <th>Data di Nascita</th>
-                        <th>Luogo di Nascita</th>
-                        <th>Codice Fiscale</th>
-                        <th>Residenza</th>
-                        <th>Provincia</th>
-                        <th>Indirizzo</th>
-                        <th>Telefono</th>
-                        <th>Mobile</th>
-                        <th>Email</th>
-                        <th>Codice Sanitario</th>
-                        <th>Codice Medico</th>
-
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Cognome</th>
-                        <th>Data di Nascita</th>
-                        <th>Luogo di Nascita</th>
-                        <th>Codice Fiscale</th>
-                        <th>Residenza</th>
-                        <th>Provincia</th>
-                        <th>Indirizzo</th>
-                        <th>Telefono</th>
-                        <th>Mobile</th>
-                        <th>Email</th>
-                        <th>Codice Sanitario</th>
-                        <th>Codice Medico</th>
-                    </tr>
-                </tfoot>
-            </table>
+            
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="idPaziente" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:BoundField DataField="idPaziente" HeaderText="idPaziente" InsertVisible="False" ReadOnly="True" SortExpression="idPaziente" />
+                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                    <asp:BoundField DataField="cognome" HeaderText="cognome" SortExpression="cognome" />
+                    <asp:BoundField DataField="data_nascita" HeaderText="data_nascita" SortExpression="data_nascita" />
+                    <asp:BoundField DataField="luogo" HeaderText="luogo" SortExpression="luogo" />
+                    <asp:BoundField DataField="cod_fis" HeaderText="cod_fis" SortExpression="cod_fis" />
+                    <asp:BoundField DataField="residenza" HeaderText="residenza" SortExpression="residenza" />
+                    <asp:BoundField DataField="provincia" HeaderText="provincia" SortExpression="provincia" />
+                    <asp:BoundField DataField="indirizzo" HeaderText="indirizzo" SortExpression="indirizzo" />
+                    <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
+                    <asp:BoundField DataField="mobile" HeaderText="mobile" SortExpression="mobile" />
+                    <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                    <asp:BoundField DataField="cod_sanitario" HeaderText="cod_sanitario" SortExpression="cod_sanitario" />
+                    <asp:BoundField DataField="cod_medico" HeaderText="cod_medico" SortExpression="cod_medico" />
+                    <asp:BoundField DataField="data_update" HeaderText="data_update" SortExpression="data_update" />
+                    <asp:BoundField DataField="data_inserimento" HeaderText="data_inserimento" SortExpression="data_inserimento" />
+                    <asp:BoundField DataField="Sesso" HeaderText="Sesso" SortExpression="Sesso" />
+                    <asp:BoundField DataField="cap" HeaderText="cap" SortExpression="cap" />
+                    <asp:CommandField ShowEditButton="True" />
+                    <asp:CommandField ShowDeleteButton="True" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" SelectCommand="SELECT * FROM [paziente]"></asp:SqlDataSource>
+            <br />
+            
         </div>
     </section>
 
@@ -84,6 +76,8 @@
        });
 
    </script>
+
+    </form>
 
 </body>
 

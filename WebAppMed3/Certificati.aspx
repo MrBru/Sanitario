@@ -30,47 +30,43 @@
     
     <section class="container content-container">
 
+    <h3>Tabella Certificati</h3>
 
- <%--       <h3>Tabella Certificati</h3>
         <div class="table-wrapper col-md-12">
-            <table id="Certificati" class="table">
-                <thead>
-                    <tr>
-                        <th>Codice paziente</th>
-                        <th>Codice medico</th>
-                        <th>Data Emissione</th>
-                        <th>Codice Patologia</th>
-                        <th>Data Inizio</th>
-                        <th>Data Fine</th>
-                        <th>Note</th>
-                        <th>Tipologia</th>
-                        <th>Domicilio</th>
-                        <th>Indirizzo</th>
-                        <th>Comune</th>
-                        <th>Provincia</th>
-                        <th>CAP</th>
 
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Codice paziente</th>
-                        <th>Codice medico</th>
-                        <th>Data Emissione</th>
-                        <th>Codice Patologia</th>
-                        <th>Data Inizio</th>
-                        <th>Data Fine</th>
-                        <th>Note</th>
-                        <th>Tipologia</th>
-                        <th>Domicilio</th>
-                        <th>Indirizzo</th>
-                        <th>Comune</th>
-                        <th>Provincia</th>
-                        <th>CAP</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>--%>
+            <!-- TABELLA VERSIONE GRIDVIEW -->
+             <form id="form1" runat="server">
+                <div>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="idCertificato" DataSourceID="SqlDataSource1">
+                        <Columns>
+                            <asp:BoundField DataField="idCertificato" HeaderText="idCertificato" InsertVisible="False" ReadOnly="True" SortExpression="idCertificato" />
+                            <asp:BoundField DataField="cod_paziente" HeaderText="cod_paziente" SortExpression="cod_paziente" />
+                            <asp:BoundField DataField="cod_medico" HeaderText="cod_medico" SortExpression="cod_medico" />
+                            <asp:BoundField DataField="data_emissione" HeaderText="data_emissione" SortExpression="data_emissione" />
+                            <asp:BoundField DataField="cod_patologia" HeaderText="cod_patologia" SortExpression="cod_patologia" />
+                            <asp:BoundField DataField="data_inizio" HeaderText="data_inizio" SortExpression="data_inizio" />
+                            <asp:BoundField DataField="data_fine" HeaderText="data_fine" SortExpression="data_fine" />
+                            <asp:BoundField DataField="note" HeaderText="note" SortExpression="note" />
+                            <asp:BoundField DataField="tipologia" HeaderText="tipologia" SortExpression="tipologia" />
+                            <asp:BoundField DataField="domicilio" HeaderText="domicilio" SortExpression="domicilio" />
+                            <asp:BoundField DataField="indirizzo" HeaderText="indirizzo" SortExpression="indirizzo" />
+                            <asp:BoundField DataField="comune" HeaderText="comune" SortExpression="comune" />
+                            <asp:BoundField DataField="provincia" HeaderText="provincia" SortExpression="provincia" />
+                            <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP" />
+                            <asp:CommandField ShowEditButton="True" />
+                            <asp:CommandField ShowDeleteButton="True" />
+                        </Columns>
+                    </asp:GridView> 
+
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" SelectCommand="SELECT * FROM [certificato]"></asp:SqlDataSource>
+                    <br />
+                </div>
+                
+
+             
+            </form>
+
+        </div>
     </section>
 
     <!--#include file="templates/footer.tpl"-->

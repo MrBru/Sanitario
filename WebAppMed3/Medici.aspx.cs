@@ -13,5 +13,10 @@ namespace WebAppMed3
         {
 
         }
+
+        protected void Insert(object sender, EventArgs e)
+        {
+            SqlDataSource1.Insert();
+        }
     }
 }

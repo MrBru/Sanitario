@@ -35,16 +35,11 @@
         <div class="table-wrapper col-md-12">
 
                 <form id="form1" runat="server">
-                <div>
-                    Gestione Patologie
-                </div>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="cod_patologia" DataSourceID="SqlDataSource1" Width="1052px">
+
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="1052px">
                     <Columns>
-                        <asp:BoundField DataField="cod_patologia" HeaderText="cod_patologia" ReadOnly="True" SortExpression="cod_patologia" />
                         <asp:BoundField DataField="descrizione" HeaderText="descrizione" SortExpression="descrizione" />
                         <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
-                        <asp:CommandField ShowEditButton="True" />
-                        <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
                 </asp:GridView>
 
@@ -66,26 +61,7 @@
                 </table>
 
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                    SelectCommand="SELECT * FROM [patologia]"
-                    InsertCommand="INSERT INTO [patologia] VALUES (@Cod_Patologia, @Descrizione, @Nome )"
-                    UpdateCommand="UPDATE [patologia] SET descrizione = @Descrizione, nome = @Nome WHERE cod_patologia = @Cod_Patologia"
-                    DeleteCommand="DELETE FROM [patologia] WHERE cod_patologia = @Cod_Patologia">
-
-                    <InsertParameters>
-                        <asp:ControlParameter Name="Cod_Patologia" ControlID="txtCod_Patologia" Type="String" />
-                        <asp:ControlParameter Name="Descrizione" ControlID="txtDescrizione" Type="String" />
-                        <asp:ControlParameter Name="Nome" ControlID="txtNome" Type="String" />
-                    </InsertParameters>
-
-                    <UpdateParameters>
-                        <asp:Parameter Name="Descrizione" Type="String" />
-                        <asp:Parameter Name="Nome" Type="String" />
-                        <asp:Parameter Name="Cod_Patologia" Type="String" />
-                    </UpdateParameters>
-
-                    <DeleteParameters>
-                        <asp:Parameter Name="Cod_Patologia" Type="String" />
-                    </DeleteParameters>
+                    SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]">
 
 
                 </asp:SqlDataSource>

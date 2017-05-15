@@ -13,5 +13,34 @@ namespace WebAppMed3
         {
 
         }
+
+        protected void btninseriscinuovo_Click(object sender, EventArgs e)
+        {
+            SqlDataSource1.Insert();
+            PulisciTxtBox();
+
+        }
+
+        protected void PulisciTxtBox()
+        {
+            txtnome.Text = null;
+            txtcognome.Text = null;
+            txtcell.Text = null;
+            txtcodicefiscale.Text = null;
+            txtcod_medico.Text = null;
+            txtcodicesanitario.Text = null;
+            txtdatanascita.Text = null;
+            txtemail.Text = null;
+            txtindirizzo.Text = null;
+            txtluogo.Text = null;
+            txtprovincia.Text = null;
+            txtresidenza.Text = null;
+            txttel.Text = null;
+            txtdata_update.Text = null;
+            txtdata_inserimento.Text = null;
+            txtsesso.Text = null;
+            txtcap.Text = null;
+
+        }
     }
 }

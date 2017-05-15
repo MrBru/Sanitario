@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Patologie</title>
+    <title>Certificati</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -37,28 +37,35 @@
             <!-- TABELLA VERSIONE GRIDVIEW -->
              <form id="form1" runat="server">
                 <div>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="idCertificato" DataSourceID="SqlDataSource1">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                         <Columns>
-                            <asp:BoundField DataField="idCertificato" HeaderText="idCertificato" InsertVisible="False" ReadOnly="True" SortExpression="idCertificato" />
-                            <asp:BoundField DataField="cod_paziente" HeaderText="cod_paziente" SortExpression="cod_paziente" />
-                            <asp:BoundField DataField="cod_medico" HeaderText="cod_medico" SortExpression="cod_medico" />
-                            <asp:BoundField DataField="data_emissione" HeaderText="data_emissione" SortExpression="data_emissione" />
-                            <asp:BoundField DataField="cod_patologia" HeaderText="cod_patologia" SortExpression="cod_patologia" />
-                            <asp:BoundField DataField="data_inizio" HeaderText="data_inizio" SortExpression="data_inizio" />
-                            <asp:BoundField DataField="data_fine" HeaderText="data_fine" SortExpression="data_fine" />
-                            <asp:BoundField DataField="note" HeaderText="note" SortExpression="note" />
-                            <asp:BoundField DataField="tipologia" HeaderText="tipologia" SortExpression="tipologia" />
-                            <asp:BoundField DataField="domicilio" HeaderText="domicilio" SortExpression="domicilio" />
-                            <asp:BoundField DataField="indirizzo" HeaderText="indirizzo" SortExpression="indirizzo" />
-                            <asp:BoundField DataField="comune" HeaderText="comune" SortExpression="comune" />
-                            <asp:BoundField DataField="provincia" HeaderText="provincia" SortExpression="provincia" />
+                            <asp:BoundField DataField="data_emissione" HeaderText="Data Emissione" SortExpression="data_emissione" />
+                            <asp:BoundField DataField="data_inizio" HeaderText="Data Inizio" SortExpression="data_inizio" />
+                            <asp:BoundField DataField="data_fine" HeaderText="Data Fine" SortExpression="data_fine" />
+                            <asp:BoundField DataField="note" HeaderText="Note" SortExpression="note" />
+                            <asp:BoundField DataField="tipologia" HeaderText="Tipologia" SortExpression="tipologia" />
+                            <asp:BoundField DataField="domicilio" HeaderText="Domicilio" SortExpression="domicilio" />
+                            <asp:BoundField DataField="indirizzo" HeaderText="Indirizzo" SortExpression="indirizzo" />
+                            <asp:BoundField DataField="comune" HeaderText="Comune" SortExpression="comune" />
+                            <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" />
                             <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP" />
-                            <asp:CommandField ShowEditButton="True" />
-                            <asp:CommandField ShowDeleteButton="True" />
+                            <asp:BoundField DataField="patologia" HeaderText="Patologia" SortExpression="patologia" />
+                            <asp:BoundField DataField="nome medico" HeaderText="Nome Medico" SortExpression="nome medico" />
+                            <asp:BoundField DataField="cognome medico" HeaderText="Cognome Medico" SortExpression="cognome medico" />
+                            <asp:BoundField DataField="cod_sanitario" HeaderText="Codice Sanitario" SortExpression="cod_sanitario" />
+                            <asp:BoundField DataField="nome paziente" HeaderText="Nome Paziente" SortExpression="nome paziente" />
+                            <asp:BoundField DataField="cognome paziente" HeaderText="Cognome Paziente" SortExpression="cognome paziente" />
                         </Columns>
                     </asp:GridView> 
 
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" SelectCommand="SELECT * FROM [certificato]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
+                        SelectCommand=
+                        "SELECT c.[data_emissione], c.[data_inizio], c.[data_fine], c.[note], c.[tipologia], c.[domicilio], c.[indirizzo], c.[comune], c.[provincia], c.[CAP], pt.[nome] as patologia, m.[nome] as 'nome medico', m.[cognome] as 'cognome medico', pz.[cod_sanitario], pz.[nome] as 'nome paziente', pz.[cognome] as 'cognome paziente'
+                        FROM [certificato] AS c
+                        JOIN [patologia] AS pt ON  c.[cod_patologia] = pt.[cod_patologia]
+                        JOIN [medico] AS m ON c.[cod_medico] = m.[cod_medico]
+                        JOIN [paziente] AS pz ON c.[cod_sanitario] = pz.[cod_sanitario]
+                        "></asp:SqlDataSource>
                     <br />
                 </div>
                 

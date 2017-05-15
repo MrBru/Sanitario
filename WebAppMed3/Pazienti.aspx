@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Patologie</title>
+    <title>Pazienti</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -33,9 +33,8 @@
         <h3>Tabella Pazienti</h3>
         <div class="table-wrapper col-md-12">
             
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="idPaziente" DataSourceID="SqlDataSource1">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                 <Columns>
-                    <asp:BoundField DataField="idPaziente" HeaderText="idPaziente" InsertVisible="False" ReadOnly="True" SortExpression="idPaziente" />
                     <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
                     <asp:BoundField DataField="cognome" HeaderText="cognome" SortExpression="cognome" />
                     <asp:BoundField DataField="data_nascita" HeaderText="data_nascita" SortExpression="data_nascita" />
@@ -47,17 +46,23 @@
                     <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
                     <asp:BoundField DataField="mobile" HeaderText="mobile" SortExpression="mobile" />
                     <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                    <asp:BoundField DataField="cod_sanitario" HeaderText="cod_sanitario" SortExpression="cod_sanitario" />
-                    <asp:BoundField DataField="cod_medico" HeaderText="cod_medico" SortExpression="cod_medico" />
                     <asp:BoundField DataField="data_update" HeaderText="data_update" SortExpression="data_update" />
                     <asp:BoundField DataField="data_inserimento" HeaderText="data_inserimento" SortExpression="data_inserimento" />
+                    <asp:BoundField DataField="cod_sanitario" HeaderText="cod_sanitario" SortExpression="cod_sanitario" />
                     <asp:BoundField DataField="Sesso" HeaderText="Sesso" SortExpression="Sesso" />
                     <asp:BoundField DataField="cap" HeaderText="cap" SortExpression="cap" />
-                    <asp:CommandField ShowEditButton="True" />
-                    <asp:CommandField ShowDeleteButton="True" />
+                    <asp:BoundField DataField="cognome medico" HeaderText="Cognome Medico" SortExpression="cognome medico" />
+                    <asp:BoundField DataField="nome medico" HeaderText="Nome Medico" SortExpression="nome medico" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" SelectCommand="SELECT * FROM [paziente]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
+                SelectCommand=
+               "SELECT p.[nome], p.[cognome], p.[data_nascita], p.[luogo], p.[cod_fis], p.[residenza], p.[provincia], p.[indirizzo], p.[telefono], p.[mobile],
+                 p.[email], p.[data_update], p.[data_inserimento], p.[cod_sanitario], p.[Sesso], p.[cap], m.[cognome] as 'cognome medico', m.[nome] as 'nome medico'
+                FROM [paziente] AS p
+                JOIN [medico] as m ON m.[cod_medico] = p.[cod_medico]">
+
+            </asp:SqlDataSource>
             <br />
             
         </div>

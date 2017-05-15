@@ -22,72 +22,91 @@
     
     
 <div class="container">
+    
     <div class="col-md-3"></div>
         <div class="col-md-6">
             <section class="container content-container">
-            <form>
+            <form runat="server">
                 <h3>Inserimento nuovo medico</h3>
                 <div class="form-group">
                     <label for="Nome">Nome:</label>
-                    <input type="text" class="form-control" id="nome"/>
+                    <asp:TextBox ID="txtnome" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Cognome">Cognome:</label>
-                    <input type="text" class="form-control" id="cognome"/>
+                    <asp:TextBox ID="txtcognome" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Data di nascita">Data di nascita:</label>
-                    <input type="date" class="form-control" id="dataNascita"/>
+                    <asp:TextBox ID="txtdatanascita" runat="server"  class="form-control" TextMode="Date"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Luogo di nascita">Luogo di nascita:</label>
-                    <input type="text" class="form-control" id="luogoNascita"/>
+                    <asp:TextBox ID="txtluogo" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Codice fiscale">Codice fiscale:</label>
-                    <input type="text" maxlength="16" class="form-control" id="codiceFiscale"/>
+                    <asp:TextBox ID="txtcodicefiscale" runat="server"  class="form-control" MaxLength="16"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Residenza">Residenza:</label>
-                    <input type="text" class="form-control" id="residenza"/>
+                    <asp:TextBox ID="txtresidenza" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Provincia">Provincia:</label>
-                    <input type="text" maxlength="2" class="form-control" id="provincia"/>
+                    <asp:TextBox ID="txtprovincia" runat="server"  class="form-control" MaxLength="2"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Indirizzo">Indirizzo:</label>
-                    <input type="text" class="form-control" id="indirizzo"/>
+                    <asp:TextBox ID="txtindirizzo" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Telefono">Telefono:</label>
-                    <input type="number" class="form-control" id="telefono"/>
+                    <asp:TextBox ID="txttel" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Mobile">Mobile:</label>
-                    <input type="number" class="form-control" id="mobile"/>
+                    <asp:TextBox ID="txtcell" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Email">Email:</label>
-                    <input type="email" class="form-control" id="email"/>
+                    <asp:TextBox ID="txtemail" runat="server"  class="form-control" TextMode="Email"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Codice albo">Codice albo:</label>
-                    <input type="number" class="form-control" id="codiceAlbo"/>
+                    <asp:TextBox ID="txtcodalbo" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="Codice medico">Codice medico:</label>
-                    <input type="number" class="form-control" id="codiceMedico"/>
+                    <asp:TextBox ID="txtcodmedico" runat="server"  class="form-control"></asp:TextBox>
                 </div>
-                <button type="submit" class="btn btn-default">Inserisci nuovo medico</button>
+                <asp:Button ID="btninseriscinuovo" runat="server" Text="Inserisci Nuovo Medico" class="btn btn-default" OnClick="btninseriscinuovo_Click"/>
+             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" InsertCommand="INSERT INTO [medico] ([nome], [cognome], [data_nascita], [luogo], [cod_fis], [residenza], [provincia], [indirizzo], [telefono], [mobile], [email], [cod_albo], [cod_medico]) VALUES (@nome, @cognome, @data_nascita, @luogo, @cod_fis, @residenza, @provincia, @indirizzo, @telefono, @mobile, @email, @cod_albo, @cod_medico)" >
+        
+        <InsertParameters>
+
+            <asp:FormParameter Name="nome" Type="String" formfield="txtnome" />
+            <asp:FormParameter Name="cognome" Type="String" formfield="txtcognome"/>
+            <asp:FormParameter DbType="Date" Name="data_nascita" formfield="txtdatanascita"/>
+            <asp:FormParameter Name="luogo" Type="String" formfield="txtluogo"/>
+            <asp:FormParameter Name="cod_fis" Type="String" formfield="txtcodicefiscale"/>
+            <asp:FormParameter Name="residenza" Type="String" formfield="txtresidenza" />
+            <asp:FormParameter Name="provincia" Type="String" formfield="txtprovincia"/>
+            <asp:FormParameter Name="indirizzo" Type="String" formfield="txtindirizzo" />
+            <asp:FormParameter Name="telefono" Type="String"  formfield="txttel" />
+            <asp:FormParameter Name="mobile" Type="String"  formfield="txtcell" />
+            <asp:FormParameter Name="email" Type="String" formfield="txtemail" />
+            <asp:FormParameter Name="cod_albo" Type="String" formfield="txtcodalbo" />
+            <asp:FormParameter Name="cod_medico" Type="String" formfield="txtcodmedico"/>
+        </InsertParameters>
+    </asp:SqlDataSource>
             </form>
                 </section>
-
-                <div class="col-md-3"></div>
-        </div>
+    
+   
     </div>
 
-
+    </div>
 
     <!--#include file="templates/footer.tpl"-->
 

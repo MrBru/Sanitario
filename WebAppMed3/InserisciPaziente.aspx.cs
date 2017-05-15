@@ -18,7 +18,7 @@ namespace WebAppMed3
         {
             SqlDataSource1.Insert();
             PulisciTxtBox();
-
+            
         }
 
         protected void PulisciTxtBox()

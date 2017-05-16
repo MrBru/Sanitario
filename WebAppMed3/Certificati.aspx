@@ -3,17 +3,17 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head runat="server" >
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Certificati</title>
-    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com" />
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template" />
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     
     <link href="./css/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="./scripts/modernizr-2.6.2.js"></script>
@@ -37,9 +37,10 @@
             <!-- TABELLA VERSIONE GRIDVIEW -->
              <form id="form1" runat="server">
                 <div>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive">
+                 <HeaderStyle BackColor="#128482" ForeColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="data_emissione" HeaderText="Data Emissione" SortExpression="data_emissione" />
+                            <asp:BoundField DataField="data_emissione" HeaderText="Data Emissione" SortExpression="data_emissione"/>
                             <asp:BoundField DataField="data_inizio" HeaderText="Data Inizio" SortExpression="data_inizio" />
                             <asp:BoundField DataField="data_fine" HeaderText="Data Fine" SortExpression="data_fine" />
                             <asp:BoundField DataField="note" HeaderText="Note" SortExpression="note" />

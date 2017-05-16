@@ -29,55 +29,55 @@
             <form runat="server">
                 <h3>Inserimento nuovo medico</h3>
                 <div class="form-group">
-                    <label for="Nome">Nome:</label>
+                    <label for="txtome">Nome:</label>
                     <asp:TextBox ID="txtnome" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Cognome">Cognome:</label>
+                    <label for="txtcognome">Cognome:</label>
                     <asp:TextBox ID="txtcognome" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Data di nascita">Data di nascita:</label>
+                    <label for="txtdatanascita">Data di nascita:</label>
                     <asp:TextBox ID="txtdatanascita" runat="server"  class="form-control" TextMode="Date"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Luogo di nascita">Luogo di nascita:</label>
+                    <label for="txtluogo">Luogo di nascita:</label>
                     <asp:TextBox ID="txtluogo" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Codice fiscale">Codice fiscale:</label>
+                    <label for="txtcodicefiscale">Codice fiscale:</label>
                     <asp:TextBox ID="txtcodicefiscale" runat="server"  class="form-control" MaxLength="16"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Residenza">Residenza:</label>
+                    <label for="txtresidenza">Residenza:</label>
                     <asp:TextBox ID="txtresidenza" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Provincia">Provincia:</label>
+                    <label for="txtprovincia">Provincia:</label>
                     <asp:TextBox ID="txtprovincia" runat="server"  class="form-control" MaxLength="2"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Indirizzo">Indirizzo:</label>
+                    <label for="txtindirizzo">Indirizzo:</label>
                     <asp:TextBox ID="txtindirizzo" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Telefono">Telefono:</label>
+                    <label for="txttelefono">Telefono:</label>
                     <asp:TextBox ID="txttel" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Mobile">Mobile:</label>
+                    <label for="txtcell">Mobile:</label>
                     <asp:TextBox ID="txtcell" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Email">Email:</label>
+                    <label for="txtemail">Email:</label>
                     <asp:TextBox ID="txtemail" runat="server"  class="form-control" TextMode="Email"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Codice albo">Codice albo:</label>
+                    <label for="txtcodalbo">Codice albo:</label>
                     <asp:TextBox ID="txtcodalbo" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label for="Codice medico">Codice medico:</label>
+                    <label for="txtcodmedicoo">Codice medico:</label>
                     <asp:TextBox ID="txtcodmedico" runat="server"  class="form-control"></asp:TextBox>
                 </div>
                 <asp:Button ID="btninseriscinuovo" runat="server" Text="Inserisci Nuovo Medico" class="btn btn-default" OnClick="btninseriscinuovo_Click"/>

@@ -9,16 +9,30 @@ namespace WebAppMed3
 {
     public partial class Patologie : System.Web.UI.Page
     {
-        public string jsonPatologie;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            //leggere file json
-            //jsonPatologie = System.IO.File.ReadAllText(@"C:\Users\admin\Documents\Esercitazioni\WebAppMed3\WebAppMed3\patologie.json");
+            tabella.Visible = true;
+            modifica.Visible = false;
         }
 
-        protected void Insert(object sender, EventArgs e)
+
+        protected void btnModifica_Click(object sender, EventArgs e)
         {
-            SqlDataSource1.Insert();
+            tabella.Visible = false;
+            modifica.Visible = true;
+        }
+
+        protected void Salva_Click(object sender, EventArgs e)
+        {
+            tabella.Visible = true;
+            modifica.Visible = false;
+        }
+
+        protected void AnnullaModifiche_Click(object sender, EventArgs e)
+        {
+            tabella.Visible = true;
+            modifica.Visible = false;
         }
     }
 }

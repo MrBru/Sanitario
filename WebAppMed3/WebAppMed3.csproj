@@ -89,6 +89,7 @@
     <Content Include="css\custom.css" />
     <Content Include="css\theme.css" />
     <Content Include="InserisciMedico.aspx" />
+    <Content Include="InserisciPatologia.aspx" />
     <Content Include="InserisciPaziente.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -143,6 +144,20 @@
     </Compile>
     <Compile Include="Classes\Certificato.cs" />
     <Compile Include="HttpApiRestClient.cs" />
+    <Compile Include="InserisciMedico.aspx.cs">
+      <DependentUpon>InserisciMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserisciMedico.aspx.designer.cs">
+      <DependentUpon>InserisciMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InserisciPatologia.aspx.cs">
+      <DependentUpon>InserisciPatologia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserisciPatologia.aspx.designer.cs">
+      <DependentUpon>InserisciPatologia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InserisciPaziente.aspx.cs">
       <DependentUpon>InserisciPaziente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,13 +182,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="InserisciMedico.aspx.cs">
-      <DependentUpon>InserisciMedico.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InserisciMedico.aspx.designer.cs">
-      <DependentUpon>InserisciMedico.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Medici.aspx.cs">
       <DependentUpon>Medici.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

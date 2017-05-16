@@ -28,71 +28,72 @@
                 <section class="container content-container">
                     <h3>Inserimento nuovo paziente</h3>
                     <div class="form-group">
-                        <label for="Nome">Nome:</label>
+                        <label for="txtnome">Nome:</label>
                         <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Cognome">Cognome:</label>
+                        <label for="txtcognome">Cognome:</label>
                         <asp:TextBox ID="txtcognome" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Data di nascita">Data di nascita:</label>
+                        <label for="txtdatanascita">Data di nascita:</label>
                         <asp:TextBox ID="txtdatanascita" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Luogo di nascita">Luogo di nascita:</label>
+                        <label for="txtluogo">Luogo di nascita:</label>
                         <asp:TextBox ID="txtluogo" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Codice fiscale">Codice fiscale:</label>
+                        <label for="txtcodicefiscale">Codice fiscale:</label>
                         <asp:TextBox ID="txtcodicefiscale" runat="server" class="form-control" MaxLength="16"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Residenza">Residenza:</label>
+                        <label for="txtresidenza">Residenza:</label>
                         <asp:TextBox ID="txtresidenza" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Provincia">Provincia:</label>
+                        <label for="txtprovincia">Provincia:</label>
                         <asp:TextBox ID="txtprovincia" runat="server" class="form-control" MaxLength="2"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Indirizzo">Indirizzo:</label>
+                        <label for="txtindirizzo">Indirizzo:</label>
                         <asp:TextBox ID="txtindirizzo" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Telefono">Telefono:</label>
+                        <label for="txttel">Telefono:</label>
                         <asp:TextBox ID="txttel" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Mobile">Mobile:</label>
+                        <label for="txtcell">Mobile:</label>
                         <asp:TextBox ID="txtcell" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Email">Email:</label>
+                        <label for="txtemail">Email:</label>
                         <asp:TextBox ID="txtemail" runat="server" class="form-control" TextMode="Email"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="CodiceSanitario">Codice sanitario:</label>
+                        <label for="txtcodicesanitario">Codice sanitario:</label>
                         <asp:TextBox ID="txtcodicesanitario" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="CodiceMedico">Codice medico:</label>
+                        <label for="txtcod_medico">Codice medico:</label>
+                        <asp:DropDownList ID="ddlcodmedico" runat="server" DataSourceID="SqlDataSource1"  DataTextField="medico" DataValueField="codice"></asp:DropDownList>
                         <asp:TextBox ID="txtcod_medico" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="DataUpdate">Data Update:</label>
+                        <label for="txtdata_udate">Data Update:</label>
                         <asp:TextBox ID="txtdata_update" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="DataInserimento">Data inserimento:</label>
+                        <label for="txtdata_inserimento">Data inserimento:</label>
                         <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="Sesso">Sesso:</label>
+                        <label for="txtsesso">Sesso:</label>
                         <asp:TextBox ID="txtsesso" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="CAP">CAP:</label>
+                        <label for="txtcap">CAP:</label>
                         <asp:TextBox ID="txtcap" runat="server" class="form-control" MaxLength="5"></asp:TextBox>
                     </div>
 
@@ -103,7 +104,8 @@
             <div class="col-md-3"></div>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                 InsertCommand="INSERT INTO [paziente] 
+                 SelectCommand="SELECT m.cod_medico as codice, m.[nome] + ' ' + m.[cognome] as medico FROM paziente AS p JOIN medico As m ON p.cod_medico = m.cod_medico"
+                InsertCommand="INSERT INTO [paziente] 
                 ([nome], [cognome], [data_nascita], [luogo], [cod_fis], [residenza], [provincia], [indirizzo], [telefono], [mobile], [email], [cod_sanitario], [cod_medico], [data_update], [data_inserimento], [Sesso], [cap]) 
                 VALUES (@nome, @cognome, @data_nascita, @luogo, @cod_fis, @residenza, @provincia, @indirizzo, @telefono, @mobile, @email, @cod_sanitario, @cod_medico, @data_update, @data_inserimento, @Sesso, @cap)" >
                 <InsertParameters>
@@ -120,7 +122,7 @@
                     <asp:FormParameter Name="mobile" Type="String" formfield="txtcell"/>
                     <asp:FormParameter Name="email" Type="String" formfield="txtemail"/>
                     <asp:FormParameter Name="cod_sanitario" Type="String" formfield="txtcodicesanitario"/>
-                    <asp:FormParameter Name="cod_medico" Type="String" formfield="txtcod_medico"/>
+                    <asp:FormParameter Name="cod_medico" Type="String" formfield="ddl.codmedico"/>
                     <asp:FormParameter Name="data_update" Type="DateTime" formfield="txtdata_update"/>
                     <asp:FormParameter Name="data_inserimento" Type="DateTime" formfield="txtdata_inserimento"/>
                     <asp:FormParameter Name="Sesso" Type="String" formfield="txtsesso"/>

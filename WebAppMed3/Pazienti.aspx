@@ -4,16 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pazienti</title>
-    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com" />
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template" />
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     
     <link href="./css/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="./scripts/modernizr-2.6.2.js"></script>
@@ -33,27 +33,30 @@
         <h3>Tabella Pazienti</h3>
         <div class="table-wrapper col-md-12">
             
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
-                <Columns>
-                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
-                    <asp:BoundField DataField="cognome" HeaderText="cognome" SortExpression="cognome" />
-                    <asp:BoundField DataField="data_nascita" HeaderText="data_nascita" SortExpression="data_nascita" />
-                    <asp:BoundField DataField="luogo" HeaderText="luogo" SortExpression="luogo" />
-                    <asp:BoundField DataField="cod_fis" HeaderText="cod_fis" SortExpression="cod_fis" />
-                    <asp:BoundField DataField="residenza" HeaderText="residenza" SortExpression="residenza" />
-                    <asp:BoundField DataField="provincia" HeaderText="provincia" SortExpression="provincia" />
-                    <asp:BoundField DataField="indirizzo" HeaderText="indirizzo" SortExpression="indirizzo" />
-                    <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
-                    <asp:BoundField DataField="mobile" HeaderText="mobile" SortExpression="mobile" />
-                    <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                    <asp:BoundField DataField="data_update" HeaderText="data_update" SortExpression="data_update" />
-                    <asp:BoundField DataField="data_inserimento" HeaderText="data_inserimento" SortExpression="data_inserimento" />
-                    <asp:BoundField DataField="cod_sanitario" HeaderText="cod_sanitario" SortExpression="cod_sanitario" />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive">
+                 <HeaderStyle BackColor="#128482" ForeColor="White" />
+                
+                <Columns >
+                    <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
+                    <asp:BoundField DataField="cognome" HeaderText="Cognome" SortExpression="cognome" />
+                    <asp:BoundField DataField="data_nascita" HeaderText="Data Di Nascita" SortExpression="data_nascita" />
+                    <asp:BoundField DataField="luogo" HeaderText="Luogo" SortExpression="luogo" />
+                    <asp:BoundField DataField="cod_fis" HeaderText="Codice Fiscale" SortExpression="cod_fis" />
+                    <asp:BoundField DataField="residenza" HeaderText="Residenza" SortExpression="residenza" />
+                    <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" />
+                    <asp:BoundField DataField="indirizzo" HeaderText="Indirizzo" SortExpression="indirizzo" />
+                    <asp:BoundField DataField="telefono" HeaderText="Telefono" SortExpression="telefono" />
+                    <asp:BoundField DataField="mobile" HeaderText="Cellulare" SortExpression="mobile" />
+                    <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
+                    <asp:BoundField DataField="data_update" HeaderText="Data Aggiornamento" SortExpression="data_update" />
+                    <asp:BoundField DataField="data_inserimento" HeaderText="Data Inserimento" SortExpression="data_inserimento" />
+                    <asp:BoundField DataField="cod_sanitario" HeaderText="Codice Sanitario" SortExpression="cod_sanitario" />
                     <asp:BoundField DataField="Sesso" HeaderText="Sesso" SortExpression="Sesso" />
-                    <asp:BoundField DataField="cap" HeaderText="cap" SortExpression="cap" />
-                    <asp:BoundField DataField="cognome medico" HeaderText="Cognome Medico" SortExpression="cognome medico" />
-                    <asp:BoundField DataField="nome medico" HeaderText="Nome Medico" SortExpression="nome medico" />
+                    <asp:BoundField DataField="cap" HeaderText="CAP" SortExpression="cap" />
+                    <asp:BoundField DataField="nome medico" HeaderText="Nome del Medico" SortExpression="nome medico" />
+                    <asp:BoundField DataField="cognome medico" HeaderText="Cognome del Medico" SortExpression="cognome medico" />  
                 </Columns>
+               
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
                 SelectCommand=

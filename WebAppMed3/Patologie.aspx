@@ -35,12 +35,13 @@
         <div class="table-wrapper col-md-12">
 
                 <form id="form1" runat="server">
-
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="1052px">
+            
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="1052px" class="table table-bordered table-hover">
                     <Columns>
-                        <asp:BoundField DataField="descrizione" HeaderText="descrizione" SortExpression="descrizione" />
-                        <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                        <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
+                        <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                     </Columns>
+                    <HeaderStyle BackColor="White" />
                 </asp:GridView>
 
                 <table border="1" style="border-collapse: collapse" class="auto-style2">

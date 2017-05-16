@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+
     <link href="./css/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="./scripts/modernizr-2.6.2.js"></script>
     <script src="./scripts/jquery-2.2.0.min.js"></script>
@@ -27,15 +27,21 @@
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <!--#include file="templates/menu.tpl"-->
-    
+
     <section class="container content-container">
+        <form id="form1" runat="server">
+            <div class="col-md-6">
+                <h3>Tabella Certificati</h3>
+                <!--cerca certificati-->
+                <div class="searchInput">
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="Cerca" />
+                </div>
+            </div>
+            <div class="table-wrapper col-md-12">
 
-    <h3>Tabella Certificati</h3>
+                <!-- TABELLA VERSIONE GRIDVIEW -->
 
-        <div class="table-wrapper col-md-12">
-
-            <!-- TABELLA VERSIONE GRIDVIEW -->
-             <form id="form1" runat="server">
                 <div>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
                         <Columns>
@@ -55,39 +61,37 @@
                             <asp:BoundField DataField="cod_sanitario" HeaderText="Codice Sanitario" SortExpression="cod_sanitario" />
                             <asp:BoundField DataField="nome paziente" HeaderText="Nome Paziente" SortExpression="nome paziente" />
                             <asp:BoundField DataField="cognome paziente" HeaderText="Cognome Paziente" SortExpression="cognome paziente" />
+                            <asp:CommandField ShowDeleteButton="True" />
                         </Columns>
-                    </asp:GridView> 
+                    </asp:GridView>
 
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
-                        SelectCommand=
-                        "SELECT c.[data_emissione], c.[data_inizio], c.[data_fine], c.[note], c.[tipologia], c.[domicilio], c.[indirizzo], c.[comune], c.[provincia], c.[CAP], pt.[nome] as patologia, m.[nome] as 'nome medico', m.[cognome] as 'cognome medico', pz.[cod_sanitario], pz.[nome] as 'nome paziente', pz.[cognome] as 'cognome paziente'
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
+                        SelectCommand="SELECT c.[data_emissione], c.[data_inizio], c.[data_fine], c.[note], c.[tipologia], c.[domicilio], c.[indirizzo], c.[comune], c.[provincia], c.[CAP], pt.[nome] as patologia, m.[nome] as 'nome medico', m.[cognome] as 'cognome medico', pz.[cod_sanitario], pz.[nome] as 'nome paziente', pz.[cognome] as 'cognome paziente'
                         FROM [certificato] AS c
                         JOIN [patologia] AS pt ON  c.[cod_patologia] = pt.[cod_patologia]
                         JOIN [medico] AS m ON c.[cod_medico] = m.[cod_medico]
                         JOIN [paziente] AS pz ON c.[cod_sanitario] = pz.[cod_sanitario]
-                        "></asp:SqlDataSource>
+                        "
+                        DeleteCommand="DELETE FROM [certificato] WHERE @idCertificato=idCertificato"></asp:SqlDataSource>
                     <br />
                 </div>
-                
+        </form>
 
-             
-            </form>
-
-        </div>
+            </div>
     </section>
 
     <!--#include file="templates/footer.tpl"-->
 
-   <script type="text/javascript">
-       //var dataset = PatologieApiClienti.getApi();
-       $(document).ready(function () {
-           $("table#Certificati").DataTable({
-               //"ajax":"test/patologie.json"
-               //data:dataset
-           });
-       });
+    <script type="text/javascript">
+        //var dataset = PatologieApiClienti.getApi();
+        $(document).ready(function () {
+            $("table#Certificati").DataTable({
+                //"ajax":"test/patologie.json"
+                //data:dataset
+            });
+        });
 
-   </script>
+    </script>
 
 </body>
 

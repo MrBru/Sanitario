@@ -29,17 +29,22 @@
     <!--#include file="templates/menu.tpl"-->
     
     <section class="container content-container">
-        
-        <h3>Tabella patologie</h3>
+        <form id="form1" runat="server">
+        <div class="col-md-2"></div>
 
-        <div class="table-wrapper col-md-12">
-
-                <form id="form1" runat="server">
+        <div class="table-wrapper col-md-8">
+            <h3>Tabella patologie</h3>
+                <!--cerca patologie-->
+            <div class="searchInput">
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="Cerca" />
+            </div>
             
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="1052px" class="table table-bordered table-hover">
                     <Columns>
                         <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
                         <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
+                        <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
                     <HeaderStyle BackColor="White" />
                 </asp:GridView>
@@ -62,12 +67,16 @@
                 </table>
 
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                    SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]">
+                    SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]"
+                    DeleteCommand="DELETE FROM [patologia] WHERE @cod_patologia=cod_patologia" >
 
 
                 </asp:SqlDataSource>
             </form>
             </div>
+
+        <div class="col-md-2"></div>
+
     </section>
 
     <!--#include file="templates/footer.tpl"-->

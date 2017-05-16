@@ -1,3 +1,27 @@
 /*div.content-container{min-height:600px;}*/
-div.table-wrapper{margin:10px 0px;}
-section.content-container{margin-bottom:100px; width:auto}
+div.table-wrapper {
+    margin: 10px 0px;
+}
+section.content-container{margin-bottom:100px; width:auto }
+
+fieldset {
+    margin: 20px;
+	border:1px solid #325C6A;
+	border-radius:8px;
+	box-shadow:0 0 1px #325C6A;
+    border-top: 1px solid #325C6A;
+    
+}
+legend {
+	background:#fff;border-bottom: none;width: auto;
+}
+
+.form-group {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.btn {
+    margin-left: 35%;
+    margin-bottom: 10px;
+}

@@ -29,27 +29,27 @@
                         <legend>Inserimento nuovo paziente</legend>
 
                         <div class="form-group">
-                            <label for="Nome">Nome: <span style="color: red;">*</span></label>
+                            <label for="txtnome">Nome: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="Cognome">Cognome: <span style="color: red;">*</span></label>
+                            <label for="txtcognome">Cognome: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcognome" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="Data di nascita">Data di nascita: <span style="color: red;">*</span></label>
+                            <label for="txtdatanascita">Data di nascita: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtdatanascita" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="Luogo di nascita">Luogo di nascita: <span style="color: red;">*</span></label>
+                            <label for="txtluogo">Luogo di nascita: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtluogo" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="Codice fiscale">Codice fiscale: <span style="color: red;">*</span></label>
+                            <label for="txtcodicefiscale">Codice fiscale: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcodicefiscale" runat="server" class="form-control" MaxLength="16"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="Residenza">Residenza: <span style="color: red;">*</span></label>
+                            <label for="txtresidenza">Residenza: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtresidenza" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -78,15 +78,15 @@
                             <asp:TextBox ID="txtcodicesanitario" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtmedico">Codice medico:</label>
-                            <asp:TextBox ID="txtmedico" runat="server" class="form-control"></asp:TextBox>
+                            <label for="ddlmedico">Codice medico:</label>
+                            <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource1" DataValueField="codice" DataTextField="dottore" ></asp:DropDownList>
                         </div>
                         <div class="form-group">
-                            <label for="DataUpdate">Data update: <span style="color: red;">*</span></label>
+                            <label for="txtdata_update">Data update: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtdata_update" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="DataInserimento">Data inserimento: <span style="color: red;">*</span></label>
+                            <label for="txtdata_inserimento">Data inserimento: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="form-group">
 
-                            <label for="CAP">CAP:<span style="color: red;">*</span></label>
+                            <label for="txtcap">CAP:<span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcap" runat="server" class="form-control" MaxLength="5"></asp:TextBox>
                         </div>
 
@@ -128,7 +128,7 @@
                     <asp:FormParameter Name="mobile" Type="String" FormField="txtcell" />
                     <asp:FormParameter Name="email" Type="String" FormField="txtemail" />
                     <asp:FormParameter Name="cod_sanitario" Type="String" FormField="txtcodicesanitario" />
-                    <asp:FormParameter Name="cod_medico" Type="String" FormField="txtmedico" />
+                    <asp:FormParameter Name="cod_medico" Type="String" FormField="ddlmedico" />
                     <asp:FormParameter Name="data_update" Type="DateTime" FormField="txtdata_update" />
                     <asp:FormParameter Name="data_inserimento" Type="DateTime" FormField="txtdata_inserimento" />
                     <asp:FormParameter Name="Sesso" Type="String" FormField="txtsesso" />

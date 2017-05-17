@@ -44,8 +44,8 @@
 
                         <Columns>
                             <asp:BoundField DataField="cod_patologia" HeaderText="Codice Patologia" SortExpression="cod_patologia" ReadOnly="True" />
+                           <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" /> 
                             <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
-                            <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                             <asp:CommandField ShowDeleteButton="True" />
                         </Columns>
                     </asp:GridView>

@@ -130,13 +130,13 @@ namespace WebAppMed3 {
         protected global::System.Web.UI.WebControls.TextBox txtcodicesanitario;
         
         /// <summary>
-        /// txtmedico control.
+        /// ddlmedico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlmedico;
         
         /// <summary>
         /// txtdata_update control.

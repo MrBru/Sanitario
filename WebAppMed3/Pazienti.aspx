@@ -38,7 +38,7 @@
             </div>
         <div class="table-wrapper col-md-12">
             
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_sanitario">
                  <HeaderStyle BackColor="#128482" ForeColor="White" />
                 
                 <Columns >

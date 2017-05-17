@@ -30,7 +30,7 @@
 
     <section class="container content-container">
         <form id="form1" runat="server">
-            <asp:Panel ID="tabella" runat="server">
+           
                 <h3>Tabella patologie</h3>
                  <div class="searchInput">
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
@@ -47,13 +47,10 @@
                             <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
                             <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                             <asp:CommandField ShowDeleteButton="True" />
-                            <asp:TemplateField> 
-                                <a href='ModificaPatologia.aspx?ID=<%#Eval("cod_patologia")%>'>Modifica</a> 
-                            </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
                 </div>
-            </asp:Panel>
+            
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
                 SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]" DeleteCommand="DELETE FROM [patologia] WHERE [cod_patologia] = @cod_patologia">
 

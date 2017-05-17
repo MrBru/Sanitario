@@ -11,7 +11,7 @@ namespace WebAppMed3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btninseriscinuovo_Click(object sender, EventArgs e)

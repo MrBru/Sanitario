@@ -27,9 +27,9 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    
     <!--#include file="templates/menu.tpl"-->
-    <form id="form1" runat="server">
-
+<form id="form1" runat="server">
     <section class="container content-container">
         <h3>Tabella Medici</h3>
               <div class="searchInput">
@@ -37,10 +37,10 @@
                 <asp:Button ID="Button1" runat="server" Text="Cerca" />
 		        </div>
 
-            </div>
+            
         <div class="table-wrapper col-md-12">
             
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" >
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_medico" >
                  <HeaderStyle BackColor="#128482" ForeColor="White" />
             <Columns>
                 <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
@@ -59,24 +59,19 @@
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                    SelectCommand="SELECT [nome], [cognome], [data_nascita], [luogo], [cod_fis], [email], [residenza], [provincia], [mobile], [telefono], [indirizzo], [cod_albo], [cod_medico] FROM [medico]"
-                    DeleteCommand="DELETE FROM [medico] WHERE @cod_medico=cod_medico">
 
-                    <DeleteParameters>
-                        <asp:Parameter Name="cod_medico" Type="String" />
-
-                    </DeleteParameters>
-
-                </asp:SqlDataSource>
-
-
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
+                SelectCommand="SELECT * FROM [medico]" 
+                DeleteCommand="DELETE FROM [medico] WHERE [cod_medico] = @cod_medico" 
+                >
+                <DeleteParameters>
+                    <asp:Parameter Name="cod_medico" Type="String" />
+                </DeleteParameters>
+                
+            </asp:SqlDataSource>
             </div>
-        </section>
+        </section>    <!--#include file="templates/footer.tpl"-->
     </form>
-
-    <!--#include file="templates/footer.tpl"-->
-
     <script type="text/javascript">
         //var dataset = PatologieApiClienti.getApi();
         $(document).ready(function () {
@@ -88,6 +83,6 @@
 
     </script>
 
-</body>
+    </body>
 
 </html>

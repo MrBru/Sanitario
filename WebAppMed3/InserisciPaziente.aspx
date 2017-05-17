@@ -78,16 +78,16 @@
                             <asp:TextBox ID="txtcodicesanitario" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtcod_medico">Codice medico:</label><br />
-                            <asp:DropDownList ID="ddlcodmedico" runat="server" DataSourceID="SqlDataSource1" DataTextField="dottore" DataValueField="codice" Width="100%"></asp:DropDownList>
+                            <label for="txtmedico">Codice medico:</label>
+                            <asp:TextBox ID="txtmedico" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="DataUpdate">Data update: <span style="color: red;">*</span></label>
-                            <asp:TextBox ID="txtdata_update" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtdata_update" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="DataInserimento">Data inserimento: <span style="color: red;">*</span></label>
-                            <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="txtsesso">Sesso:</label>
@@ -128,7 +128,7 @@
                     <asp:FormParameter Name="mobile" Type="String" FormField="txtcell" />
                     <asp:FormParameter Name="email" Type="String" FormField="txtemail" />
                     <asp:FormParameter Name="cod_sanitario" Type="String" FormField="txtcodicesanitario" />
-                    <asp:FormParameter Name="cod_medico" Type="String" FormField="txtcod_medico" />
+                    <asp:FormParameter Name="cod_medico" Type="String" FormField="txtmedico" />
                     <asp:FormParameter Name="data_update" Type="DateTime" FormField="txtdata_update" />
                     <asp:FormParameter Name="data_inserimento" Type="DateTime" FormField="txtdata_inserimento" />
                     <asp:FormParameter Name="Sesso" Type="String" FormField="txtsesso" />

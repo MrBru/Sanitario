@@ -21,14 +21,13 @@
         <!--#include file="templates/menu.tpl"-->
 
         <div class="container">
-
             <div class="col-md-2"></div>
-
             <div class="col-md-8">
 
                 <section class="container content-container">
                     <fieldset>
                         <legend>Inserimento nuovo paziente</legend>
+<<<<<<< HEAD
                         <h3>Inserimento nuovo paziente</h3>
                         <div class="form-group">
                             <label for="txtnome">Nome:</label>
@@ -52,6 +51,30 @@
                         </div>
                         <div class="form-group">
                             <label for="txtresidenza">Residenza:</label>
+=======
+                        <div class="form-group">
+                            <label for="Nome">Nome: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="Cognome">Cognome: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtcognome" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="Data di nascita">Data di nascita: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtdatanascita" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="Luogo di nascita">Luogo di nascita: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtluogo" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="Codice fiscale">Codice fiscale: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtcodicefiscale" runat="server" class="form-control" MaxLength="16"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="Residenza">Residenza: <span style="color: red;">*</span></label>
+>>>>>>> 8140ecf030d762fc3563f7b4ddb2cdb1a1185346
                             <asp:TextBox ID="txtresidenza" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -75,7 +98,11 @@
                             <asp:TextBox ID="txtemail" runat="server" class="form-control" TextMode="Email"></asp:TextBox>
                         </div>
                         <div class="form-group">
+<<<<<<< HEAD
                             <label for="txtcodicesanitario">Codice sanitario:</label>
+=======
+                            <label for="CodiceSanitario">Codice sanitario: <span style="color: red;">*</span></label>
+>>>>>>> 8140ecf030d762fc3563f7b4ddb2cdb1a1185346
                             <asp:TextBox ID="txtcodicesanitario" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -83,19 +110,32 @@
                             <asp:DropDownList ID="ddlcodmedico" runat="server" DataSourceID="SqlDataSource1" DataTextField="dottore" DataValueField="codice" Width="100%"></asp:DropDownList>
                         </div>
                         <div class="form-group">
+<<<<<<< HEAD
                             <label for="txtdata_udate">Data Update:</label>
                             <asp:TextBox ID="txtdata_update" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="txtdata_inserimento">Data inserimento:</label>
                             <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
+=======
+                            <label for="DataUpdate">Data update: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtdata_update" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="DataInserimento">Data inserimento: <span style="color: red;">*</span></label>
+                            <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control"></asp:TextBox>
+>>>>>>> 8140ecf030d762fc3563f7b4ddb2cdb1a1185346
                         </div>
                         <div class="form-group">
                             <label for="txtsesso">Sesso:</label>
                             <asp:TextBox ID="txtsesso" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
+<<<<<<< HEAD
                             <label for="txtcap">CAP:</label>
+=======
+                            <label for="CAP">CAP:<span style="color: red;">*</span></label>
+>>>>>>> 8140ecf030d762fc3563f7b4ddb2cdb1a1185346
                             <asp:TextBox ID="txtcap" runat="server" class="form-control" MaxLength="5"></asp:TextBox>
                         </div>
 
@@ -109,12 +149,38 @@
             <div class="col-md-2"></div>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
+<<<<<<< HEAD
                 SelectCommand="SELECT [cod_medico] as codice, [nome] + ' ' + [cognome] as dottore FROM medico"
                 InsertCommand="INSERT INTO [paziente] 
                 ([nome], [cognome], [data_nascita], [luogo], [cod_fis], [residenza], [provincia], [indirizzo], [telefono], [mobile], [email], [cod_sanitario], [cod_medico], [data_update], [data_inserimento], [Sesso], [cap]) 
                 VALUES (@nome, @cognome, @data_nascita, @luogo, @cod_fis, @residenza, @provincia, @indirizzo, @telefono, @mobile, @email, @cod_sanitario, @cod_medico, @data_update, @data_inserimento, @Sesso, @cap)">
+=======
+                InsertCommand="INSERT INTO [paziente] 
+                            ([nome], [cognome], [data_nascita], [luogo], [cod_fis], [residenza], [provincia], [indirizzo], [telefono], [mobile], [email], [cod_sanitario], [cod_medico], [data_update], [data_inserimento], [Sesso], [cap]) 
+                            VALUES (@nome, @cognome, @data_nascita, @luogo, @cod_fis, @residenza, @provincia, @indirizzo, @telefono, @mobile, @email, @cod_sanitario, @cod_medico, @data_update, @data_inserimento, @Sesso, @cap)">
+                
+>>>>>>> 8140ecf030d762fc3563f7b4ddb2cdb1a1185346
                 <InsertParameters>
+                    <asp:FormParameter Name="nome" Type="String" FormField="txtnome" />
+                    <asp:FormParameter Name="cognome" Type="String" FormField="txtcognome" />
+                    <asp:FormParameter DbType="Date" Name="data_nascita" FormField="txtdatanascita" />
+                    <asp:FormParameter Name="luogo" Type="String" FormField="txtluogo" />
+                    <asp:FormParameter Name="cod_fis" Type="String" FormField="txtcodicefiscale" />
+                    <asp:FormParameter Name="residenza" Type="String" FormField="txtresidenza" />
+                    <asp:FormParameter Name="provincia" Type="String" FormField="txtprovincia" />
+                    <asp:FormParameter Name="indirizzo" Type="String" FormField="txtindirizzo" />
+                    <asp:FormParameter Name="telefono" Type="String" FormField="txttel" />
+                    <asp:FormParameter Name="mobile" Type="String" FormField="txtcell" />
+                    <asp:FormParameter Name="email" Type="String" FormField="txtemail" />
+                    <asp:FormParameter Name="cod_sanitario" Type="String" FormField="txtcodicesanitario" />
+                    <asp:FormParameter Name="cod_medico" Type="String" FormField="txtcod_medico" />
+                    <asp:FormParameter Name="data_update" Type="DateTime" FormField="txtdata_update" />
+                    <asp:FormParameter Name="data_inserimento" Type="DateTime" FormField="txtdata_inserimento" />
+                    <asp:FormParameter Name="Sesso" Type="String" FormField="txtsesso" />
+                    <asp:FormParameter Name="cap" Type="String" FormField="txtcap" />
+                </InsertParameters>
 
+<<<<<<< HEAD
                     <asp:FormParameter Name="nome" Type="String" FormField="txtnome" />
                     <asp:FormParameter Name="cognome" Type="String" FormField="txtcognome" />
                     <asp:FormParameter DbType="Date" Name="data_nascita" FormField="txtdatanascita" />
@@ -136,6 +202,8 @@
                 </InsertParameters>
 
 
+=======
+>>>>>>> 8140ecf030d762fc3563f7b4ddb2cdb1a1185346
             </asp:SqlDataSource>
 
         </div>

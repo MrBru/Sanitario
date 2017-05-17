@@ -14,12 +14,6 @@ namespace WebAppMed3
 
         }
 
-        protected void btninseriscinuovo_Click(object sender, EventArgs e)
-        {
-            SqlDataSource1.Insert();
-            PulisciTxtBox();
-
-        }
 
         protected void PulisciTxtBox()
         {
@@ -36,6 +30,12 @@ namespace WebAppMed3
             txttel.Text = null;
             txtcodalbo.Text = null;
             txtcodmedico.Text = null;
+        }
+
+        protected void btninseriscinuovo_Click1(object sender, EventArgs e)
+        {
+            SqlDataSource1.Insert();
+            PulisciTxtBox();
         }
     }
 }

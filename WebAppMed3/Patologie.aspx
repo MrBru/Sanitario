@@ -30,27 +30,24 @@
 
     <section class="container content-container">
         <form id="form1" runat="server">
-           
+            <div class="table-wrapper col-md-12">
                 <h3>Tabella patologie</h3>
-                 <div class="searchInput">
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                <asp:Button ID="Button2" runat="server" Text="Cerca" />
-            </div>
-            
-                <div class="table-wrapper col-md-12">
-
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_patologia">
-                        <HeaderStyle BackColor="#128482" ForeColor="White" />
-
-                        <Columns>
-                            <asp:BoundField DataField="cod_patologia" HeaderText="Codice Patologia" SortExpression="cod_patologia" ReadOnly="True" />
-                           <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" /> 
-                            <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
-                            <asp:CommandField ShowDeleteButton="True" />
-                        </Columns>
-                    </asp:GridView>
+                <div class="searchInput">
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button2" runat="server" Text="Cerca" />
                 </div>
-            
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_patologia">
+                    <HeaderStyle BackColor="#128482" ForeColor="White" />
+
+                    <Columns>
+                        <asp:BoundField DataField="cod_patologia" HeaderText="Codice Patologia" SortExpression="cod_patologia" ReadOnly="True" />
+                        <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
+                        <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
+                        <asp:CommandField ShowDeleteButton="True" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
                 SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]" DeleteCommand="DELETE FROM [patologia] WHERE [cod_patologia] = @cod_patologia">
 

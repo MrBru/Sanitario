@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Patologie</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com" />
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template"/>
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template" />
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal"/>
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <link href="./css/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -43,18 +43,17 @@
                             <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
                             <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                             <asp:CommandField ShowDeleteButton="True" />
-                            <asp:CommandField ShowEditButton="True" />
                         </Columns>
                     </asp:GridView>
                 </div>
             </asp:Panel>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]" DeleteCommand="DELETE FROM [patologia] WHERE [cod_patologia] = @cod_patologia" >
+                SelectCommand="SELECT [cod_patologia], [descrizione], [nome] FROM [patologia]" DeleteCommand="DELETE FROM [patologia] WHERE [cod_patologia] = @cod_patologia">
 
                 <DeleteParameters>
                     <asp:Parameter Name="cod_patologia" Type="String" />
                 </DeleteParameters>
-                 <UpdateParameters>
+                <UpdateParameters>
                     <asp:FormParameter Name="descrizione" Type="String" FormField="txtdescrizione" />
                     <asp:FormParameter Name="nome" Type="String" FormField="txtnome" />
                     <asp:FormParameter Name="cod_patologia" Type="String" FormField="txtcodice" />

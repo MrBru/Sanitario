@@ -40,13 +40,13 @@ namespace WebAppMed3 {
         protected global::System.Web.UI.WebControls.TextBox txtdescrizione;
         
         /// <summary>
-        /// btninseriscinuovo control.
+        /// btnmodifica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btninseriscinuovo;
+        protected global::System.Web.UI.WebControls.Button btnmodifica;
         
         /// <summary>
         /// SqlDataSource1 control.

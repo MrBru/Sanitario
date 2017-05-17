@@ -122,7 +122,7 @@
                     <asp:FormParameter Name="mobile" Type="String" formfield="txtcell"/>
                     <asp:FormParameter Name="email" Type="String" formfield="txtemail"/>
                     <asp:FormParameter Name="cod_sanitario" Type="String" formfield="txtcodicesanitario"/>
-                    <asp:FormParameter Name="cod_medico" Type="String" formfield="ddl.codmedico"/>
+                    <asp:FormParameter Name="cod_medico" Type="String" formfield="ddl.codmedico.selectedindex"/>
                     <asp:FormParameter Name="data_update" Type="DateTime" formfield="txtdata_update"/>
                     <asp:FormParameter Name="data_inserimento" Type="DateTime" formfield="txtdata_inserimento"/>
                     <asp:FormParameter Name="Sesso" Type="String" formfield="txtsesso"/>

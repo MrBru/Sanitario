@@ -10,34 +10,43 @@
 namespace WebAppMed3 {
     
     
-    public partial class Patologie {
+    public partial class ModificaPatologia {
         
         /// <summary>
-        /// form1 control.
+        /// txtcodice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txtcodice;
         
         /// <summary>
-        /// tabella control.
+        /// txtnome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel tabella;
+        protected global::System.Web.UI.WebControls.TextBox txtnome;
         
         /// <summary>
-        /// GridView1 control.
+        /// txtdescrizione control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.TextBox txtdescrizione;
+        
+        /// <summary>
+        /// btninseriscinuovo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btninseriscinuovo;
         
         /// <summary>
         /// SqlDataSource1 control.

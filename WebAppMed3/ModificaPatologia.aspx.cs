@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebAppMed3
 {
-    public partial class Patologie : System.Web.UI.Page
+    public partial class ModificaPatologia : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
     }
 }

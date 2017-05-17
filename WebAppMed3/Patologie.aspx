@@ -43,6 +43,9 @@
                             <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
                             <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                             <asp:CommandField ShowDeleteButton="True" />
+                            <asp:TemplateField> 
+                                <a href='ModificaPatologia.aspx?ID=<%#Eval("cod_patologia")%>'>Modifica</a> 
+                            </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -60,30 +63,6 @@
                 </UpdateParameters>
 
             </asp:SqlDataSource>
-
-            <asp:Panel ID="modifica" runat="server">
-
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <section class="container content-container">
-                        <h3>Inserimento nuova patologia</h3>
-                        <div class="form-group">
-                            <label for="txtcodice">Codice</label>
-                            <asp:TextBox ID="txtcodice" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtnome">Nome:</label>
-                            <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtdescrizione">Descrizione:</label>
-                            <asp:TextBox ID="txtdescrizione" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-                        <asp:Button ID="Salva" runat="server" Text="Inserisci Patologia" OnClick="Salva_Click" />
-                        <asp:Button ID="AnnullaModifiche" runat="server" Text="Annulla" OnClick="AnnullaModifiche_Click" />
-                    </section>
-                </div>
-            </asp:Panel>
         </form>
     </section>
 

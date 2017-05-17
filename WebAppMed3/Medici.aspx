@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     
+
     <link href="./css/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="./scripts/modernizr-2.6.2.js"></script>
     <script src="./scripts/jquery-2.2.0.min.js"></script>
@@ -31,6 +32,12 @@
 
     <section class="container content-container">
         <h3>Tabella Medici</h3>
+              <div class="searchInput">
+    	        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="Cerca" />
+		        </div>
+
+            </div>
         <div class="table-wrapper col-md-12">
             
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" >
@@ -52,38 +59,34 @@
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
+                    SelectCommand="SELECT [nome], [cognome], [data_nascita], [luogo], [cod_fis], [email], [residenza], [provincia], [mobile], [telefono], [indirizzo], [cod_albo], [cod_medico] FROM [medico]"
+                    DeleteCommand="DELETE FROM [medico] WHERE @cod_medico=cod_medico">
 
-        <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-            
-            SelectCommand="SELECT [nome], [cognome], [data_nascita], [luogo], [cod_fis], [email], [residenza], [provincia], [mobile], [telefono], [indirizzo], [cod_albo], [cod_medico] FROM [medico]" 
-            
-            DeleteCommand="DELETE FROM [medico] WHERE @cod_medico=cod_medico" >
-        
-            <DeleteParameters>
-                <asp:Parameter Name="cod_medico" Type="String"/>
+                    <DeleteParameters>
+                        <asp:Parameter Name="cod_medico" Type="String" />
 
-            </DeleteParameters>
+                    </DeleteParameters>
 
-        </asp:SqlDataSource>
+                </asp:SqlDataSource>
 
 
-        </div>
-    </section>
+            </div>
+        </section>
     </form>
 
     <!--#include file="templates/footer.tpl"-->
 
-   <script type="text/javascript">
-       //var dataset = PatologieApiClienti.getApi();
-       $(document).ready(function () {
-           $("table#Medici").DataTable({
-               //"ajax":"patologie.json"
-               //data:dataset
-           });
-       });
+    <script type="text/javascript">
+        //var dataset = PatologieApiClienti.getApi();
+        $(document).ready(function () {
+            $("table#Medici").DataTable({
+                //"ajax":"patologie.json"
+                //data:dataset
+            });
+        });
 
-   </script>
+    </script>
 
 </body>
 

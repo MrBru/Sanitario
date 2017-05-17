@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						© Copyright Medilab Theme. All Rights Reserved
+						© Copyright IFOA Medilab. All Rights Reserved
 					</div>
 				</div>
 			</div>

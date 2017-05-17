@@ -36,7 +36,19 @@
 						</ul>
 						</li>
 				        <li class=""><a href="Certificati.aspx">Certificati</a></li>
-				        <li class=""><a href="Patologie.aspx">Patologie</a></li>
+                <li class="dropdown">
+                  <a data-toggle="dropdown">
+                    Patologie<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="Patologie.aspx">Tabella Patologie</a>
+                    </li>
+                    <li>
+                      <a href="InserisciPatologia.aspx">Inserisci nuova</a>
+                    </li>
+                  </ul>
+                </li>
 				      </ul>
 				    </div>
 				</div>

@@ -32,7 +32,11 @@
         <form id="form1" runat="server">
             <asp:Panel ID="tabella" runat="server">
                 <h3>Tabella patologie</h3>
-
+                 <div class="searchInput">
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:Button ID="Button2" runat="server" Text="Cerca" />
+            </div>
+            
                 <div class="table-wrapper col-md-12">
 
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_patologia">

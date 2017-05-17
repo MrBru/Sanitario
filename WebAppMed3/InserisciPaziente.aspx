@@ -29,7 +29,7 @@
                     <h3>Inserimento nuovo paziente</h3>
                     <div class="form-group">
                         <label for="txtnome">Nome:</label>
-                        <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox> 
                     </div>
                     <div class="form-group">
                         <label for="txtcognome">Cognome:</label>

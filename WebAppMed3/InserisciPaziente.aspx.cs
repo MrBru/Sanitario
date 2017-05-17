@@ -27,7 +27,6 @@ namespace WebAppMed3
             txtcognome.Text = null;
             txtcell.Text = null;
             txtcodicefiscale.Text = null;
-            txtcod_medico.Text = null;
             txtcodicesanitario.Text = null;
             txtdatanascita.Text = null;
             txtemail.Text = null;

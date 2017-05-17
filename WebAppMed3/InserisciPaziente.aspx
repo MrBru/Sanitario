@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InserisciPaziente.aspx.cs" Inherits="WebAppMed3.InserisciPaziente" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InserisciPaziente.aspx.cs" Inherits="WebAppMed3.InserisciPaziente" %>
 
 <!DOCTYPE html>
 
@@ -76,17 +76,16 @@
                         <asp:TextBox ID="txtcodicesanitario" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="txtcod_medico">Codice medico:</label>
-                        <asp:DropDownList ID="ddlcodmedico" runat="server" DataSourceID="SqlDataSource1"  DataTextField="medico" DataValueField="codice"></asp:DropDownList>
-                        <asp:TextBox ID="txtcod_medico" runat="server" class="form-control"></asp:TextBox>
+                        <label for="txtcod_medico">Codice medico:</label><br />
+                        <asp:DropDownList ID="ddlcodmedico" runat="server" DataSourceID="SqlDataSource1"  DataTextField="dottore" DataValueField="codice" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="form-group">
                         <label for="txtdata_udate">Data Update:</label>
-                        <asp:TextBox ID="txtdata_update" runat="server" class="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtdata_update" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="txtdata_inserimento">Data inserimento:</label>
-                        <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="txtsesso">Sesso:</label>
@@ -104,7 +103,7 @@
             <div class="col-md-3"></div>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                 SelectCommand="SELECT m.cod_medico as codice, m.[nome] + ' ' + m.[cognome] as medico FROM paziente AS p JOIN medico As m ON p.cod_medico = m.cod_medico"
+                 SelectCommand="SELECT [cod_medico] as codice, [nome] + ' ' + [cognome] as dottore FROM medico"
                 InsertCommand="INSERT INTO [paziente] 
                 ([nome], [cognome], [data_nascita], [luogo], [cod_fis], [residenza], [provincia], [indirizzo], [telefono], [mobile], [email], [cod_sanitario], [cod_medico], [data_update], [data_inserimento], [Sesso], [cap]) 
                 VALUES (@nome, @cognome, @data_nascita, @luogo, @cod_fis, @residenza, @provincia, @indirizzo, @telefono, @mobile, @email, @cod_sanitario, @cod_medico, @data_update, @data_inserimento, @Sesso, @cap)" >
@@ -122,7 +121,7 @@
                     <asp:FormParameter Name="mobile" Type="String" formfield="txtcell"/>
                     <asp:FormParameter Name="email" Type="String" formfield="txtemail"/>
                     <asp:FormParameter Name="cod_sanitario" Type="String" formfield="txtcodicesanitario"/>
-                    <asp:FormParameter Name="cod_medico" Type="String" formfield="ddl.codmedico.selectedindex"/>
+                    <asp:FormParameter Name="cod_medico" Type="String" formfield="ddlcodmedico"/>
                     <asp:FormParameter Name="data_update" Type="DateTime" formfield="txtdata_update"/>
                     <asp:FormParameter Name="data_inserimento" Type="DateTime" formfield="txtdata_inserimento"/>
                     <asp:FormParameter Name="Sesso" Type="String" formfield="txtsesso"/>

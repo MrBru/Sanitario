@@ -13,6 +13,15 @@ namespace WebAppMed3 {
     public partial class ModificaPatologia {
         
         /// <summary>
+        /// formPatologia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm formPatologia;
+        
+        /// <summary>
         /// txtcodice control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace WebAppMed3 {
         protected global::System.Web.UI.WebControls.TextBox txtdescrizione;
         
         /// <summary>
-        /// btnmodifica control.
+        /// btnsalva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnmodifica;
+        protected global::System.Web.UI.WebControls.Button btnsalva;
         
         /// <summary>
         /// SqlDataSource1 control.

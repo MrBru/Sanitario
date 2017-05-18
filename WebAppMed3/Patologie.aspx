@@ -36,14 +36,15 @@
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                     <asp:Button ID="Button2" runat="server" Text="Cerca" />
                 </div><br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_patologia">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_patologia" OnRowEditing="GridView1_RowEditing" >
                     <HeaderStyle BackColor="#128482" ForeColor="White" />
 
                     <Columns>
                         <asp:BoundField DataField="cod_patologia" HeaderText="Codice Patologia" SortExpression="cod_patologia" ReadOnly="True" />
                         <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                         <asp:BoundField DataField="descrizione" HeaderText="Descrizione" SortExpression="descrizione" />
-                        <asp:CommandField ShowDeleteButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />  
+                        <asp:CommandField ShowEditButton="True" />
                     </Columns>
                 </asp:GridView>
             </div>

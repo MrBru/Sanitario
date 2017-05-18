@@ -24,11 +24,12 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <section class="container content-container">
-                <form runat="server">
+                <form id="formPatologia" runat="server">
                     <h3>Modifica Patologia</h3>
                     <div>
                         <label for="txtcodice">Codice:</label>
-                        <asp:TextBox ID="txtcodice" runat="server" class="form-control"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="txtcodice" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div>
                         <label for="txtnome">Nome:</label>
@@ -36,13 +37,23 @@
                     </div>
                     <div>
                         <label for="txtdescrizione">Descrizione:</label>
-                        <asp:TextBox ID="txtdescrizione" runat="server" class="form-control"></asp:TextBox>
-                    </div><br />
-                    <div class="btn-group">
-                        <asp:Button ID="btnmodifica" runat="server" Text="Modifica Patologia" class="btn btn-primary" OnClick="btnmodifica_Click"  style="margin-right:10px"/>
-                        <a href ="Patologie.aspx" class="btn btn-primary">Annulla</a>
+                        <asp:TextBox ID="txtdescrizione" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
                     </div>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"></asp:SqlDataSource>
+                    <br />
+                    <div class="btn-group">
+                        <asp:Button ID="btnsalva" runat="server" Text="Salva Patologia" class="btn btn-primary" OnClick="btnsalva_Click" Style="margin-right: 10px" />
+                        <a href="Patologie.aspx" class="btn btn-primary">Annulla</a>
+                    </div>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
+                        UpdateCommand="UPDATE [patologia] SET [descrizione] = @descrizione, [nome] = @nome, [data_update] = @data_update WHERE [cod_patologia] = @cod_patologia">
+                        <UpdateParameters>
+                            <asp:FormParameter Name="descrizione" Type="String" FormField="txtdescrizione" />
+                            <asp:FormParameter Name="nome" Type="String" FormField="txtnome" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+
+
+
                 </form>
             </section>
         </div>

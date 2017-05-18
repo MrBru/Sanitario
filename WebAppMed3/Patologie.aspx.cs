@@ -15,5 +15,12 @@ namespace WebAppMed3
             
         }
 
+    
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridView1.Rows[e.NewEditIndex];
+            string cod_patologia = row.Cells[0].Text;
+            Response.Redirect("ModificaPatologia.aspx?cod_patologia="+cod_patologia);
+        }
     }
 }

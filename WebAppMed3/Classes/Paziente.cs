@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicazioneMedico.Data
+namespace WebAppMed3.Classes
 {
     public class Paziente
     {

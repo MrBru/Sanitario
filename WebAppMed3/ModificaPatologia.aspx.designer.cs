@@ -22,13 +22,13 @@ namespace WebAppMed3 {
         protected global::System.Web.UI.HtmlControls.HtmlForm formPatologia;
         
         /// <summary>
-        /// txtcodice control.
+        /// txtcod_patologia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcodice;
+        protected global::System.Web.UI.WebControls.TextBox txtcod_patologia;
         
         /// <summary>
         /// txtnome control.

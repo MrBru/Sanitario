@@ -29,7 +29,7 @@
                     <div>
                         <label for="txtcodice">Codice:</label>
                         <br />
-                        <asp:TextBox ID="txtcodice" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtcod_patologia" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div>
                         <label for="txtnome">Nome:</label>
@@ -45,8 +45,9 @@
                         <a href="Patologie.aspx" class="btn btn-primary">Annulla</a>
                     </div>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-                        UpdateCommand="UPDATE [patologia] SET [descrizione] = @descrizione, [nome] = @nome, [data_update] = @data_update WHERE [cod_patologia] = @cod_patologia">
+                        UpdateCommand="UPDATE [patologia] SET [descrizione] = @descrizione, [nome] = @nome WHERE [cod_patologia] = @cod_patologia">
                         <UpdateParameters>
+                            <asp:FormParameter Name="cod_patologia" Type="String" FormField="txtcod_patologia" />
                             <asp:FormParameter Name="descrizione" Type="String" FormField="txtdescrizione" />
                             <asp:FormParameter Name="nome" Type="String" FormField="txtnome" />
                         </UpdateParameters>

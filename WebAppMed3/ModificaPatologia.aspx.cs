@@ -13,21 +13,27 @@ namespace WebAppMed3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string codice = Request["cod_patologia"];
-            SqlDataSource1.SelectCommand="SELECT [cod_patologia], [nome], [descrizione] FROM [Patologia] WHERE cod_patologia ="+ codice;
-            SqlDataSource1.SelectParameters.Add(codice, "null");
-            DataView dv = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-            DataRowView drv = dv[0];
-            txtcodice.Text = drv["cod_patologia"].ToString();
-            txtnome.Text = drv["nome"].ToString();
-            txtdescrizione.Text = drv["descrizione"].ToString();
-
+           if(!IsPostBack)
+                RiempiTxt();
         }
 
         protected void btnsalva_Click(object sender, EventArgs e)
         {
             SqlDataSource1.Update();
-            Response.Redirect("Patologie.aspx");
+                Response.Redirect("Patologie.aspx");
         }
+
+        protected void RiempiTxt()
+        {
+            string codice = Request["cod_patologia"];
+            SqlDataSource1.SelectCommand = "SELECT [cod_patologia], [nome], [descrizione] FROM [Patologia] WHERE cod_patologia =" + codice;
+            DataView dv = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
+            DataRowView drv = dv[0];
+            txtcod_patologia.Text = drv["cod_patologia"].ToString();
+            txtnome.Text = drv["nome"].ToString();
+            txtdescrizione.Text = drv["descrizione"].ToString();
+
+        }
+
     }
 }

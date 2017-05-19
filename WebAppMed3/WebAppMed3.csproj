@@ -91,6 +91,7 @@
     <Content Include="InserisciMedico.aspx" />
     <Content Include="InserisciPatologia.aspx" />
     <Content Include="InserisciPaziente.aspx" />
+    <Content Include="ModificaMedico.aspx" />
     <Content Include="ModificaPatologia.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="Classes\Medico.cs" />
     <Compile Include="Classes\Patologia.cs" />
+    <Compile Include="ModificaMedico.aspx.cs">
+      <DependentUpon>ModificaMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificaMedico.aspx.designer.cs">
+      <DependentUpon>ModificaMedico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModificaPatologia.aspx.cs">
       <DependentUpon>ModificaPatologia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

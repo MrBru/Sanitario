@@ -81,14 +81,6 @@
                             <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource2" DataValueField="codice" DataTextField="dottore" Width="100%" ></asp:DropDownList>
                         </div>
                         <div class="form-group">
-                            <label for="txtdata_update">Data update: <span style="color: red;">*</span></label>
-                            <asp:TextBox ID="txtdata_update" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtdata_inserimento">Data inserimento: <span style="color: red;">*</span></label>
-                            <asp:TextBox ID="txtdata_inserimento" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
                             <label for="txtsesso">Sesso:</label>
                             <asp:TextBox ID="txtsesso" runat="server" class="form-control"></asp:TextBox>
                         </div>
@@ -105,7 +97,25 @@
                     </fieldset>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ></asp:SqlDataSource>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server"
-                        SelectCommand="SELECT [cod_medico] as codice, [nome] + ' ' + [cognome] as dottore FROM medico" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>">
+                        ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
+                        UpdateCommand="UPDATE [paziente] SET [nome] = @nome, [cognome] = @cognome, [data_nascita] = @data_nascita, [luogo] = @luogo, [cod_fis] = @cod_fis, [residenza] = @residenza, [provincia] = @provincia, [indirizzo] = @indirizzo, [telefono] = @telefono, [mobile] = @mobile, [email] = @email, [cod_sanitario] = @cod_sanitario, [cod_medico] = @cod_medico, [Sesso] = @Sesso, [CAP] = @CAP WHERE [cod_sanitario] = @cod_sanitario">
+                        <UpdateParameters>
+                            <asp:FormParameter Name="nome" Type="String" FormField="txtnome"/>
+                            <asp:FormParameter Name="cognome" Type="String" FormField="txtcognome" />
+                            <asp:FormParameter DbType="Date" Name="data_nascita" FormField="txtdatanascita" />
+                            <asp:FormParameter Name="luogo" Type="String" FormField="txtluogo"/>
+                            <asp:FormParameter Name="cod_fis" Type="String" FormField="txtcodicefiscale"/>
+                            <asp:FormParameter Name="residenza" Type="String" FormField="txtresidenza"/>
+                            <asp:FormParameter Name="provincia" Type="String" FormField="txtprovincia"/>
+                            <asp:FormParameter Name="indirizzo" Type="String" FormField="txtindirizzo" />
+                            <asp:FormParameter Name="telefono" Type="String"FormField="txttel" />
+                            <asp:FormParameter Name="mobile" Type="String" FormField="txtcell"/>
+                            <asp:FormParameter Name="email" Type="String" FormField="txtemail"/>
+                            <asp:FormParameter Name="cod_sanitario" Type="String" FormField="txtcodicesanitario"/>
+                            <asp:FormParameter Name="cod_medico" Type="String" FormField="ddlmedico"/>
+                            <asp:FormParameter Name="Sesso" Type="String" FormField="txtsesso"/>
+                            <asp:FormParameter Name="CAP" Type="String" FormField="txtcap" />
+                        </UpdateParameters>
                     </asp:SqlDataSource>
                 </form>
             </section>

@@ -37,7 +37,7 @@
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 <asp:Button ID="Button1" runat="server" Text="Cerca" />
             </div><br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_medico">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_medico" OnRowEditing="GridView1_RowEditing">
                     <HeaderStyle BackColor="#128482" ForeColor="White" />
                     <Columns>
                         <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
@@ -54,6 +54,7 @@
                         <asp:BoundField DataField="cod_albo" HeaderText="Codice Albo" SortExpression="cod_albo" />
                         <asp:BoundField DataField="cod_medico" HeaderText="Codice Medico" SortExpression="cod_medico" />
                         <asp:CommandField ShowDeleteButton="True" />
+                        <asp:CommandField ShowEditButton="True" />
                     </Columns>
                 </asp:GridView>
 

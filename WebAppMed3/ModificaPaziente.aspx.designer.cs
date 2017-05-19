@@ -139,24 +139,6 @@ namespace WebAppMed3 {
         protected global::System.Web.UI.WebControls.DropDownList ddlmedico;
         
         /// <summary>
-        /// txtdata_update control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdata_update;
-        
-        /// <summary>
-        /// txtdata_inserimento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdata_inserimento;
-        
-        /// <summary>
         /// txtsesso control.
         /// </summary>
         /// <remarks>

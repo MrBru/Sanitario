@@ -14,6 +14,13 @@ namespace WebAppMed3
 
         }
 
-       
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridView1.Rows[e.NewEditIndex];
+            string cod_medico = row.Cells[12].Text;
+            Response.Redirect("ModificaMedico.aspx?cod_medico=" + cod_medico);
+        }
+
+
     }
 }

@@ -28,7 +28,7 @@
                     <fieldset>
                         <legend>Modifica Patologia</legend>
                         <div class="form-group">
-                            <label for="txtcodice">Codice:</label>
+                            <label for="txtcod_patologia">Codice:</label>
                             <br />
                             <asp:TextBox ID="txtcod_patologia" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                         </div>

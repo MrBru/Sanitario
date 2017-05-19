@@ -61,6 +61,7 @@
                         <asp:BoundField DataField="cognome medico" HeaderText="Cognome Medico" SortExpression="cognome medico" />
                         <asp:BoundField DataField="nome medico" HeaderText="Nome Medico" SortExpression="nome medico" />
                         <asp:CommandField ShowDeleteButton="True" />
+                        <asp:CommandField ShowEditButton="True" />
                     </Columns>
 
                 </asp:GridView>

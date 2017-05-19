@@ -20,7 +20,7 @@ namespace WebAppMed3
         protected void btnsalva_Click(object sender, EventArgs e)
         {
             SqlDataSource1.Update();
-                Response.Redirect("Patologie.aspx");
+            Response.Redirect("Patologie.aspx");
         }
 
         protected void RiempiTxt()

@@ -27,6 +27,10 @@
                 <form id="formMedico" runat="server">
                     <fieldset>
                         <legend>Modifica Medico</legend>
+                        <div class="form-group">
+                            <label for="txtcodmedico">Codice medico:</label>
+                            <asp:TextBox ID="txtcodmedico" runat="server" class="form-control"></asp:TextBox>
+                        </div>
                        <div class="form-group">
                             <label for="txtnome">Nome: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
@@ -75,16 +79,30 @@
                             <label for="txtcodalbo">Codice albo:</label>
                             <asp:TextBox ID="txtcodalbo" runat="server" class="form-control"></asp:TextBox>
                         </div>
-                        <div class="form-group">
-                            <label for="txtcodmedico">Codice medico:</label>
-                            <asp:TextBox ID="txtcodmedico" runat="server" class="form-control"></asp:TextBox>
-                        </div>
                         <br />
                         <div class="btn-group">
-                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary" Style="margin-right: 10px" />
+                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary" OnClick="btnsalva_Click" Style="margin-right: 10px" />
                             <a href="Medici.aspx" class="btn btn-primary">Annulla</a>
                         </div>
                     </fieldset>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
+                        UpdateCommand="UPDATE [medico] SET [nome] = @nome, [cognome] = @cognome, [data_nascita] = @data_nascita, [luogo] = @luogo, [cod_fis] = @cod_fis, [residenza] = @residenza, [provincia] = @provincia, [indirizzo] = @indirizzo, [telefono] = @telefono, [mobile] = @mobile, [email] = @email, [cod_albo] = @cod_albo, [cod_medico] = @cod_medico WHERE [cod_medico] = @cod_medico">
+                        <UpdateParameters>
+                            <asp:FormParameter Name="nome" Type="String" FormField="txtnome"/>
+                            <asp:FormParameter Name="cognome" Type="String" FormField="txtcognome" />
+                            <asp:FormParameter DbType="Date" Name="data_nascita" FormField="txtdatanascita" />
+                            <asp:FormParameter Name="luogo" Type="String" FormField="txtluogo" />
+                            <asp:FormParameter Name="cod_fis" Type="String" FormField="txtcodicefiscale" />
+                            <asp:FormParameter Name="residenza" Type="String" FormField="txtresidenza" />
+                            <asp:FormParameter Name="provincia" Type="String" FormField="txtprovincia" />
+                            <asp:FormParameter Name="indirizzo" Type="String" FormField="txtindirizzo" />
+                            <asp:FormParameter Name="telefono" Type="String" FormField="txttel" />
+                            <asp:FormParameter Name="mobile" Type="String" FormField="txtcell" />
+                            <asp:FormParameter Name="email" Type="String" FormField="txtemail" />
+                            <asp:FormParameter Name="cod_albo" Type="String" FormField="txtcodalbo" />
+                            <asp:FormParameter Name="cod_medico" Type="String" FormField="txtcodmedico" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
                 </form>
             </section>
         </div>

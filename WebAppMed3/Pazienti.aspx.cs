@@ -13,12 +13,8 @@ namespace WebAppMed3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //PatologieApiClient.getApi();
+
         }
 
-        protected void Insert(object sender, EventArgs e)
-        {
-           // SqlDataSource1.Insert();
-        }
     }
 }

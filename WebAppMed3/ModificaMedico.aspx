@@ -81,11 +81,10 @@
                         </div>
                         <br />
                         <div class="btn-group">
-                            <asp:Button ID="btnsalva" runat="server" Text="Salva Patologia" class="btn btn-primary" Style="margin-right: 10px" />
+                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary" Style="margin-right: 10px" />
                             <a href="Medici.aspx" class="btn btn-primary">Annulla</a>
                         </div>
                     </fieldset>
-
                 </form>
             </section>
         </div>

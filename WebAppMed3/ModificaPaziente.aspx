@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InserisciPaziente.aspx.cs" Inherits="WebAppMed3.InserisciPaziente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificaPaziente.aspx.cs" Inherits="WebAppMed3.ModificaPaziente" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inserisci Paziente</title>
+    <title>Modifica Paziente</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com" />
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template" />
 
@@ -17,18 +17,17 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <form id="form1" runat="server">
-        <!--#include file="templates/menu.tpl"-->
+    <!--#include file="templates/menu.tpl"-->
 
-        <div class="container">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+    <div class="container">
 
-                <section class="container content-container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <section class="container content-container">
+                <form id="formPaziente" runat="server">
                     <fieldset>
-                        <legend>Inserimento Nuovo Paziente</legend>
-
-                        <div class="form-group">
+                        <legend>Modifica Paziente</legend>
+                       <div class="form-group">
                             <label for="txtnome">Nome: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
                         </div>
@@ -79,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <label for="ddlmedico">Codice medico:</label><br />
-                            <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource1" DataValueField="codice" DataTextField="dottore" Width="100%" ></asp:DropDownList>
+                            <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource2" DataValueField="codice" DataTextField="dottore" Width="100%" ></asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <label for="txtdata_update">Data update: <span style="color: red;">*</span></label>
@@ -98,57 +97,28 @@
                             <label for="txtcap">CAP:<span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcap" runat="server" class="form-control" MaxLength="5"></asp:TextBox>
                         </div>
-
-                        <asp:Button ID="btninseriscinuovo" runat="server" Text="Inserisci Nuovo Paziente" class="btn btn-default" OnClick="btninseriscinuovo_Click" />
+                        <br />
+                        <div class="btn-group">
+                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary"  Style="margin-right: 10px" />
+                            <a href="Pazienti.aspx" class="btn btn-primary">Annulla</a>
+                        </div>
                     </fieldset>
-
-                </section>
-
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>"
-
-                SelectCommand="SELECT [cod_medico] as codice, [nome] + ' ' + [cognome] as dottore FROM medico"
-                InsertCommand="INSERT INTO [paziente] 
-                ([nome], [cognome], [data_nascita], [luogo], [cod_fis], [residenza], [provincia], [indirizzo], [telefono], [mobile], [email], [cod_sanitario], [cod_medico], [data_update], [data_inserimento], [Sesso], [cap]) 
-                VALUES (@nome, @cognome, @data_nascita, @luogo, @cod_fis, @residenza, @provincia, @indirizzo, @telefono, @mobile, @email, @cod_sanitario, @cod_medico, @data_update, @data_inserimento, @Sesso, @cap)">
-
-                <InsertParameters>
-                    <asp:FormParameter Name="nome" Type="String" FormField="txtnome" />
-                    <asp:FormParameter Name="cognome" Type="String" FormField="txtcognome" />
-                    <asp:FormParameter DbType="Date" Name="data_nascita" FormField="txtdatanascita" />
-                    <asp:FormParameter Name="luogo" Type="String" FormField="txtluogo" />
-                    <asp:FormParameter Name="cod_fis" Type="String" FormField="txtcodicefiscale" />
-                    <asp:FormParameter Name="residenza" Type="String" FormField="txtresidenza" />
-                    <asp:FormParameter Name="provincia" Type="String" FormField="txtprovincia" />
-                    <asp:FormParameter Name="indirizzo" Type="String" FormField="txtindirizzo" />
-                    <asp:FormParameter Name="telefono" Type="String" FormField="txttel" />
-                    <asp:FormParameter Name="mobile" Type="String" FormField="txtcell" />
-                    <asp:FormParameter Name="email" Type="String" FormField="txtemail" />
-                    <asp:FormParameter Name="cod_sanitario" Type="String" FormField="txtcodicesanitario" />
-                    <asp:FormParameter Name="cod_medico" Type="String" FormField="ddlmedico" />
-                    <asp:FormParameter Name="data_update" Type="DateTime" FormField="txtdata_update" />
-                    <asp:FormParameter Name="data_inserimento" Type="DateTime" FormField="txtdata_inserimento" />
-                    <asp:FormParameter Name="Sesso" Type="String" FormField="txtsesso" />
-                    <asp:FormParameter Name="cap" Type="String" FormField="txtcap" />
-                </InsertParameters>
-
-
-            </asp:SqlDataSource>
-
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server"
+                        SelectCommand="SELECT [cod_medico] as codice, [nome] + ' ' + [cognome] as dottore FROM medico" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>">
+                    </asp:SqlDataSource>
+                </form>
+            </section>
         </div>
+    </div>
 
-        <!--#include file="templates/footer.tpl"-->
+    <!--#include file="templates/footer.tpl"-->
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/custom.js"></script>
-        <!--<script src="contactform/contactform.js"></script>-->
-
-    </form>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!--<script src="contactform/contactform.js"></script>-->
 
 </body>
 </html>

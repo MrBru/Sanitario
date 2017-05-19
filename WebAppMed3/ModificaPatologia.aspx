@@ -27,22 +27,22 @@
                 <form id="formPatologia" runat="server">
                     <fieldset>
                         <legend>Modifica Patologia</legend>
-                        <div>
+                        <div class="form-group">
                             <label for="txtcodice">Codice:</label>
                             <br />
                             <asp:TextBox ID="txtcod_patologia" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="txtnome">Nome:</label>
                             <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="txtdescrizione">Descrizione:</label>
                             <asp:TextBox ID="txtdescrizione" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
                         </div>
                         <br />
                         <div class="btn-group">
-                            <asp:Button ID="btnsalva" runat="server" Text="Salva Patologia" class="btn btn-primary" OnClick="btnsalva_Click" Style="margin-right: 10px" />
+                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary" OnClick="btnsalva_Click" Style="margin-right: 10px" />
                             <a href="Patologie.aspx" class="btn btn-primary">Annulla</a>
                         </div>
                     </fieldset>

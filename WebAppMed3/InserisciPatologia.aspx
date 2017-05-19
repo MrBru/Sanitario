@@ -17,6 +17,7 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
     <!--#include file="templates/menu.tpl"-->
 
 
@@ -27,7 +28,8 @@
         <div class="col-md-6">
             <section class="container content-container">
                 <form runat="server">
-                    <h3>Inserimento nuova Patologia</h3>
+                    <fieldset>
+                    <legend>Inserimento Nuova Patologia</legend>
                     <div class="form-group">
                         <label for="txtcodice">Codice:</label>
                         <asp:TextBox ID="txtcodice" runat="server" class="form-control"></asp:TextBox>
@@ -42,7 +44,7 @@
                     </div>
                     
                     <asp:Button ID="btninseriscinuovo" runat="server" Text="Inserisci Nuova Patologia" class="btn btn-default" OnClick="btninseriscinuovo_Click" />
-
+                </fieldset>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
                         InsertCommand="INSERT INTO [patologia] ([cod_patologia], [descrizione], [nome]) VALUES (@cod_patologia, @descrizione, @nome)">
 

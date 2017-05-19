@@ -26,7 +26,7 @@
                 <section class="container content-container">
                     
                     <fieldset>
-                        <legend>Inserimento nuovo medico </legend>
+                        <legend>Inserimento NUovo Medico</legend>
                         <div class="form-group">
                             <label for="txtnome">Nome: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>

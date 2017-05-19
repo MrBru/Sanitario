@@ -26,7 +26,7 @@
 
                 <section class="container content-container">
                     <fieldset>
-                        <legend>Inserimento nuovo paziente</legend>
+                        <legend>Inserimento Nuovo Paziente</legend>
 
                         <div class="form-group">
                             <label for="txtnome">Nome: <span style="color: red;">*</span></label>

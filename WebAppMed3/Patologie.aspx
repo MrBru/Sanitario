@@ -31,7 +31,7 @@
     <section class="container content-container">
         <form id="form1" runat="server">
             <div class="table-wrapper col-md-12">
-                <h3>Tabella patologie</h3>
+                <h3>Tabella Patologie</h3>
                 <div class="searchInput">
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                     <asp:Button ID="Button2" runat="server" Text="Cerca" />

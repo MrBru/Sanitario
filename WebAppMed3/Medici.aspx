@@ -42,7 +42,7 @@
                     <Columns>
                         <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                         <asp:BoundField DataField="cognome" HeaderText="Cognome" SortExpression="cognome" />
-                        <asp:BoundField DataField="data_nascita" HeaderText="Data Di Nascita" SortExpression="data_nascita" />
+                        <asp:BoundField DataField="data_nascita" HeaderText="Data Di Nascita" SortExpression="data_nascita" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField DataField="luogo" HeaderText="Luogo" SortExpression="luogo" />
                         <asp:BoundField DataField="cod_fis" HeaderText="Codice Fiscale" SortExpression="cod_fis" />
                         <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />

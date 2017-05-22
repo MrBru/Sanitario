@@ -38,14 +38,14 @@
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 <asp:Button ID="Button1" runat="server" Text="Cerca" />
             </div><br />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" DataKeyNames="cod_sanitario">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" class="table table-bordered table-striped table-responsive" OnRowEditing="GridView1_RowEditing" DataKeyNames="cod_sanitario">
                     <HeaderStyle BackColor="#128482" ForeColor="White" />
 
                     <Columns>
                         <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
                         <asp:BoundField DataField="cognome" HeaderText="Cognome" SortExpression="cognome" />
-                        <asp:BoundField DataField="data_nascita" HeaderText="Data Di Nascita" SortExpression="data_nascita" />
-                        <asp:BoundField DataField="luogo" HeaderText="Luogo" SortExpression="luogo" />
+                        <asp:BoundField DataField="data_nascita" HeaderText="Data Nascita" SortExpression="data_nascita" DataFormatString="{0:dd/MM/yyyy}" />
+                        <asp:BoundField DataField="luogo" HeaderText="Luogo di Nascita" SortExpression="luogo" />
                         <asp:BoundField DataField="cod_fis" HeaderText="Codice Fiscale" SortExpression="cod_fis" />
                         <asp:BoundField DataField="residenza" HeaderText="Residenza" SortExpression="residenza" />
                         <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" />
@@ -53,13 +53,13 @@
                         <asp:BoundField DataField="telefono" HeaderText="Telefono" SortExpression="telefono" />
                         <asp:BoundField DataField="mobile" HeaderText="Cellulare" SortExpression="mobile" />
                         <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
-                        <asp:BoundField DataField="data_update" HeaderText="Data Aggiornamento" SortExpression="data_update" />
-                        <asp:BoundField DataField="data_inserimento" HeaderText="Data Inserimento" SortExpression="data_inserimento" />
+                        <asp:BoundField DataField="data_update" HeaderText="Data Aggiornamento" SortExpression="data_update" DataFormatString="{0:dd/MM/yyyy}" />
+                        <asp:BoundField DataField="data_inserimento" HeaderText="Data Inserimento" SortExpression="data_inserimento" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField DataField="cod_sanitario" HeaderText="Codice Sanitario" SortExpression="cod_sanitario" />
                         <asp:BoundField DataField="Sesso" HeaderText="Sesso" SortExpression="Sesso" />
                         <asp:BoundField DataField="cap" HeaderText="CAP" SortExpression="cap" />
-                        <asp:BoundField DataField="cognome medico" HeaderText="Cognome Medico" SortExpression="cognome medico" />
-                        <asp:BoundField DataField="nome medico" HeaderText="Nome Medico" SortExpression="nome medico" />
+                        <%--<asp:BoundField DataField="cognome medico" HeaderText="Cognome Del Medico" SortExpression="cognome medico" />--%>
+                        <asp:BoundField DataField="nome medico" HeaderText="Nome Del Medico" SortExpression="nome medico" />
                         <asp:CommandField ShowDeleteButton="True" />
                         <asp:CommandField ShowEditButton="True" />
                     </Columns>
@@ -71,6 +71,7 @@
                 FROM [paziente] AS p
                 JOIN [medico] as m ON m.[cod_medico] = p.[cod_medico]"
                     DeleteCommand="DELETE FROM [paziente] WHERE @cod_sanitario=cod_sanitario"></asp:SqlDataSource>
+
             </div>
         </section>
         <!--#include file="templates/footer.tpl"-->

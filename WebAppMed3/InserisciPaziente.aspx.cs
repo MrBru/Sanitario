@@ -35,8 +35,6 @@ namespace WebAppMed3
             txtprovincia.Text = null;
             txtresidenza.Text = null;
             txttel.Text = null;
-            txtdata_update.Text = null;
-            txtdata_inserimento.Text = null;
             txtsesso.Text = null;
             txtcap.Text = null;
 

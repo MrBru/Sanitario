@@ -78,11 +78,11 @@
                         </div>
                         <div class="form-group">
                             <label for="ddlmedico">Codice medico:</label><br />
-                            <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource2" DataValueField="codice" DataTextField="dottore" Width="100%" ></asp:DropDownList>
+                            <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource1" DataValueField="codice" DataTextField="dottore" Width="100%" ></asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <label for="txtsesso">Sesso:</label>
-                            <asp:TextBox ID="txtsesso" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtsesso" runat="server" class="form-control" MaxLength="1"></asp:TextBox>
                         </div>
                         <div class="form-group">
 
@@ -91,11 +91,12 @@
                         </div>
                         <br />
                         <div class="btn-group">
-                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary"  Style="margin-right: 10px" />
+                            <asp:Button ID="btnsalva" runat="server" Text="Salva Modifiche" class="btn btn-primary" OnClick="btnsalva_Click" Style="margin-right: 10px" />
                             <a href="Pazienti.aspx" class="btn btn-primary">Annulla</a>
                         </div>
                     </fieldset>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
+                        SelectCommand="SELECT [nome] + ' ' + [cognome] as dottore, [cod_medico] as codice FROM [medico]"></asp:SqlDataSource>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server"
                         ConnectionString="<%$ ConnectionStrings:project_workConnectionString %>" 
                         UpdateCommand="UPDATE [paziente] SET [nome] = @nome, [cognome] = @cognome, [data_nascita] = @data_nascita, [luogo] = @luogo, [cod_fis] = @cod_fis, [residenza] = @residenza, [provincia] = @provincia, [indirizzo] = @indirizzo, [telefono] = @telefono, [mobile] = @mobile, [email] = @email, [cod_sanitario] = @cod_sanitario, [cod_medico] = @cod_medico, [Sesso] = @Sesso, [CAP] = @CAP WHERE [cod_sanitario] = @cod_sanitario">
@@ -108,7 +109,7 @@
                             <asp:FormParameter Name="residenza" Type="String" FormField="txtresidenza"/>
                             <asp:FormParameter Name="provincia" Type="String" FormField="txtprovincia"/>
                             <asp:FormParameter Name="indirizzo" Type="String" FormField="txtindirizzo" />
-                            <asp:FormParameter Name="telefono" Type="String"FormField="txttel" />
+                            <asp:FormParameter Name="telefono" Type="String" FormField="txttel" />
                             <asp:FormParameter Name="mobile" Type="String" FormField="txtcell"/>
                             <asp:FormParameter Name="email" Type="String" FormField="txtemail"/>
                             <asp:FormParameter Name="cod_sanitario" Type="String" FormField="txtcodicesanitario"/>

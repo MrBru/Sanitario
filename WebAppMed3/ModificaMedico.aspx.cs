@@ -34,7 +34,9 @@ namespace WebAppMed3
             txtcodicefiscale.Text = drv["cod_fis"].ToString();
             txtcodmedico.Text = drv["cod_medico"].ToString();
             txtcognome.Text = drv["cognome"].ToString();
-            txtdatanascita.Text = drv["data_nascita"].ToString();
+            string data = drv["data_nascita"].ToString();
+            DateTime data1 = DateTime.Parse(data);
+            txtdatanascita.Text = data1.ToString("yyyy-MM-dd");
             txtemail.Text = drv["email"].ToString();
             txtindirizzo.Text = drv["indirizzo"].ToString();
             txtluogo.Text = drv["luogo"].ToString();

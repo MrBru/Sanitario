@@ -42,10 +42,10 @@
                 <Columns>
                     <asp:BoundField DataField="cod_sanitario" HeaderText="Codice Sanitario" SortExpression="cod_sanitario" />
                     <asp:BoundField DataField="cod_medico" HeaderText="Codice del Medico" SortExpression="cod_medico" />
-                    <asp:BoundField DataField="data_emissione" HeaderText="Data di Emissione" SortExpression="data_emissione" />
+                    <asp:BoundField DataField="data_emissione" HeaderText="Data di Emissione" SortExpression="data_emissione" DataFormatString="{0:MM/dd/yyyy}" />
                     <asp:BoundField DataField="cod_patologia" HeaderText="Codice Patologia" SortExpression="cod_patologia" />
-                    <asp:BoundField DataField="data_inizio" HeaderText="Data Inizio" SortExpression="data_inizio" />
-                    <asp:BoundField DataField="data_fine" HeaderText="Data Fine" SortExpression="data_fine" />
+                    <asp:BoundField DataField="data_inizio" HeaderText="Data Inizio" SortExpression="data_inizio" DataFormatString="{0:dd/MM/yyyy}" />
+                    <asp:BoundField DataField="data_fine" HeaderText="Data Fine" SortExpression="data_fine"  DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:BoundField DataField="note" HeaderText="Note" SortExpression="note" />
                     <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP" />
                     <asp:BoundField DataField="provincia" HeaderText="Provincia" SortExpression="provincia" />

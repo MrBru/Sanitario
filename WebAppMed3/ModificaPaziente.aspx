@@ -28,23 +28,23 @@
                     <fieldset>
                         <legend>Modifica Paziente</legend>
                        <div class="form-group">
-                            <label for="txtnome">Nome: <span style="color: red;">*</span></label>
-                            <asp:TextBox ID="txtnome" runat="server" class="form-control"></asp:TextBox>
+                            <label for="txtnome">Nome: <span style="color: red;" >*</span></label>
+                            <asp:TextBox ID="txtnome" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="txtcognome">Cognome: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcognome" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtdatanascita">Data di nascita: <span style="color: red;">*</span></label>
+                            <label for="txtdatanascita">Data di Nascita: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtdatanascita" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtluogo">Luogo di nascita: <span style="color: red;">*</span></label>
+                            <label for="txtluogo">Luogo di Nascita: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtluogo" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtcodicefiscale">Codice fiscale: <span style="color: red;">*</span></label>
+                            <label for="txtcodicefiscale">Codice Fiscale: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcodicefiscale" runat="server" class="form-control" MaxLength="16"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -60,11 +60,11 @@
                             <asp:TextBox ID="txtindirizzo" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txttel">Telefono:</label>
+                            <label for="txttel">Telefono Fisso:</label>
                             <asp:TextBox ID="txttel" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtcell">Mobile:</label>
+                            <label for="txtcell">Telefono Mobile:</label>
                             <asp:TextBox ID="txtcell" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -73,11 +73,11 @@
                         </div>
                         <div class="form-group">
 
-                            <label for="CodiceSanitario">Codice sanitario: <span style="color: red;">*</span></label>
+                            <label for="CodiceSanitario">Codice Sanitario: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcodicesanitario" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="ddlmedico">Codice medico:</label><br />
+                            <label for="ddlmedico">Medico:</label><br />
                             <asp:DropDownList ID="ddlmedico" runat="server" DataSourceID="SqlDataSource1" DataValueField="codice" DataTextField="dottore" Width="100%" ></asp:DropDownList>
                         </div>
                         <div class="form-group">

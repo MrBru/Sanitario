@@ -28,8 +28,8 @@
                     <fieldset>
                         <legend>Modifica Medico</legend>
                         <div class="form-group">
-                            <label for="txtcodmedico">Codice medico:</label>
-                            <asp:TextBox ID="txtcodmedico" runat="server" class="form-control"></asp:TextBox>
+                            <label for="txtcodmedico">Codice Medico:</label>
+                            <asp:TextBox ID="txtcodmedico" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                         </div>
                        <div class="form-group">
                             <label for="txtnome">Nome: <span style="color: red;">*</span></label>
@@ -40,15 +40,15 @@
                             <asp:TextBox ID="txtcognome" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtdatanascita">Data di nascita: <span style="color: red;">*</span></label>
+                            <label for="txtdatanascita">Data di Nascita: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtdatanascita" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtluogo">Luogo di nascita: <span style="color: red;">*</span></label>
+                            <label for="txtluogo">Luogo di Nascita: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtluogo" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtcodicefiscale">Codice fiscale: <span style="color: red;">*</span></label>
+                            <label for="txtcodicefiscale">Codice Fiscale: <span style="color: red;">*</span></label>
                             <asp:TextBox ID="txtcodicefiscale" runat="server" class="form-control" MaxLength="16"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -64,11 +64,11 @@
                             <asp:TextBox ID="txtindirizzo" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txttel">Telefono:</label>
+                            <label for="txttel">Telefono Fisso:</label>
                             <asp:TextBox ID="txttel" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtcell">Mobile:</label>
+                            <label for="txtcell">Telefono Mobile:</label>
                             <asp:TextBox ID="txtcell" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
@@ -76,7 +76,7 @@
                             <asp:TextBox ID="txtemail" runat="server" class="form-control" TextMode="Email"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="txtcodalbo">Codice albo:</label>
+                            <label for="txtcodalbo">Codice Albo:</label>
                             <asp:TextBox ID="txtcodalbo" runat="server" class="form-control"></asp:TextBox>
                         </div>
                         <br />

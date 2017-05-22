@@ -83,7 +83,7 @@
                         </div>
                         <div class="form-group">
                             <label for="txtsesso">Sesso:</label>
-                            <asp:TextBox ID="txtsesso" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtsesso" runat="server" class="form-control" MaxLength="1"></asp:TextBox>
                         </div>
                         <div class="form-group">
 
